@@ -46,7 +46,8 @@ module pipe_wb
     
     output wire ex,
     output wire flush,
-    output wire [ 0:0] hlt,
+    output wire hlt,
+    output wire eret,
     // STATUS region
     output wire [ 0:0] ie,
     output wire [ 0:0] exl,
@@ -154,7 +155,7 @@ cp0 cp0
     
     .cp0_we(cp0_we && wb_valid),
     .ex_wb_in(ex_wb && wb_valid),
-    .eret_flush_in(eret_flush),
+    .eret_flush_in(eret_flush && wb_valid),
     .branch_delay_wb(branch_delay),
     
     .cp0_rdc_in(cp0_rdc),
@@ -167,6 +168,7 @@ cp0 cp0
     .ex(ex),
     .flush(flush),
     .hlt(hlt),
+    .eret(eret),
     // STATUS region
     .ie(ie),
     .exl(exl),

@@ -14,6 +14,7 @@ module pipe_if
     input wire mem_clk,
     input wire rst,
     input wire id_allowin,
+    input wire flush_if_id,
     
     input wire [31:0] rs_pc_in,
     input wire [25:0] imm_in,
@@ -41,7 +42,7 @@ wire if_ready_go;
 assign if_allowin = !if_valid || (if_ready_go && id_allowin);
 assign if_valid = 1;
 assign if_ready_go = 1;
-assign if_id_validto = if_valid && if_ready_go;
+assign if_id_validto = if_valid && if_ready_go && (!flush_if_id);
 
 mux8 npc_mux(
         .in0(npc_add_out), 

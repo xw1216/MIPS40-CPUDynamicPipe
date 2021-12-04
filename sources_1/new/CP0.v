@@ -29,6 +29,7 @@ module cp0
     output wire ex,
     output wire flush,
     output reg [ 0:0] hlt,
+    output wire eret,
     // STATUS region
     output reg [ 0:0] ie,
     output reg [ 0:0] exl,
@@ -133,7 +134,7 @@ always @ (posedge mem_clk) begin
     if(rst) begin
         cause_bd <= 1'b0;
     end
-    else if (ex_wb_in && !exl) begin
+    else if (ex_wb_in) begin
         cause_bd <= branch_delay_wb;
     end
     else begin end
@@ -175,12 +176,16 @@ end
 
 always @ (posedge mem_clk) begin
     // make sure when resume from hlt then epc don't change
-    if(ex_wb_in && !exl && !hlt) begin
+    if(ex_wb_in && ex_code_in == EX_CODE_RESUME) begin
+        
+    end
+    else if(ex_wb_in) begin
         epc <= branch_delay_wb ? epc_in - 32'h4 : epc_in;
     end
     else if(cp0_we && cp0_rdc_in == RDC_EPC) begin
         epc <= cp0_data_in;
     end
+    else begin end
 end
 
 

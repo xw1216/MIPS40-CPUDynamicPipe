@@ -16,7 +16,11 @@ module pipe_exe
     input wire mem_clk,
     input wire mem_allowin,
     input wire id_exe_validto,
+    input wire ex_mem,
+    input wire ex_wb,
     input wire bypass_rdc_valid_in,
+    // flush pipeline
+    input wire flush_exe_mem,
     // id pipe data input
     input wire [31:0] pc_in,
     input wire [ 4:0] sa_in,
@@ -41,11 +45,23 @@ module pipe_exe
     input wire hi_we_in,
     // specific instruction pipeline block
     input wire lw_instr_in,
+    input wire mfc0_instr_in,
+    input wire jump_instr_in,
+    // exception trans
+    input wire ex_in,
+    input wire [ 4:0] ex_code_in,
+    input wire [ 0:0] cp0_rd_mux_sel_in,
+    input wire cp0_we_in,
+    input wire [ 4:0] cp0_rdc_in,
+    input wire eret_flush_in,
+    input wire branch_delay_in,
+    
     
     // pipe control signal
     output wire exe_allowin,
     output wire exe_mem_validto,
     // pipe backward data
+    output wire [31:0] pc,
     output wire [31:0] rt,
     output wire [31:0] alu_result,
     output wire [ 4:0] rdc_exe,
@@ -59,6 +75,16 @@ module pipe_exe
     // pipe mux signal backward
     output wire [1:0] rd_mux_sel,
     output wire exe_lw_instr,
+    output wire exe_mfc0_instr,
+    output wire exe_jump_instr,
+    // exception trans
+    output wire ex,
+    output wire [ 4:0] ex_code,
+    output wire [ 0:0] cp0_rd_mux_sel,
+    output wire cp0_we,
+    output wire [ 4:0] cp0_rdc,
+    output wire eret_flush,
+    output wire branch_delay,
     // hilo register out
     output wire [31:0] lo,
     output wire [31:0] hi
@@ -69,7 +95,7 @@ reg exe_valid;
 wire exe_ready_go;
 
 assign exe_allowin = !exe_valid || (exe_ready_go && mem_allowin);
-assign exe_mem_validto = exe_valid && exe_ready_go;
+assign exe_mem_validto = exe_valid && exe_ready_go && (!flush_exe_mem);
 assign exe_ready_go = 1;
 
 always @ (posedge clk) begin
@@ -84,8 +110,6 @@ always @ (posedge clk) begin
     end
 end
 
-
-wire [31:0] pc;
 wire [ 4:0] sa;
 wire [15:0] imm;
 wire [31:0] rs;
@@ -106,10 +130,15 @@ wire [31:0] lo_mux_out;
 wire [31:0] hi_mux_out;
 wire [31:0] exe_bypass_mux_out;
 wire lw_instr;
+wire mfc0_instr;
+wire jump_instr;
 
 wire mul_sign;
 wire [63:0] mul_prod_sign, mul_prod_unsign;
 wire lo_we, hi_we;
+
+wire ex_no_write;
+assign ex_no_write = (ex || ex_mem || ex_wb);
 
 
 
@@ -139,8 +168,18 @@ exe_pipe_reg exe_pipe_reg
     .dmem_we_in(dmem_we_in),
     .rf_we_in(rf_we_in),
     .lw_instr_in(lw_instr_in),
+    .jump_instr_in(jump_instr_in),
     .lo_we_in(lo_we_in),
     .hi_we_in(hi_we_in),
+    .mfc0_instr_in,
+    // exception trans
+    .ex_in(ex_in),
+    .ex_code_in(ex_code_in),
+    .cp0_rd_mux_sel_in(cp0_rd_mux_sel_in),
+    .cp0_we_in(cp0_we_in),
+    .cp0_rdc_in(cp0_rdc_in),
+    .eret_flush_in(eret_flush_in),
+    .branch_delay_in(branch_delay_in),
     
     .pc(pc),
     .sa(sa),
@@ -165,11 +204,23 @@ exe_pipe_reg exe_pipe_reg
     .hi_we(hi_we),
     
     .bypass_rdc_valid(bypass_rdc_valid),
-    .lw_instr(lw_instr)
+    .lw_instr(lw_instr),
+    .mfc0_instr(mfc0_instr),
+    .jump_instr(jump_instr),
+    // exception trans
+    .ex(ex),
+    .ex_code(ex_code),
+    .cp0_rd_mux_sel(cp0_rd_mux_sel),
+    .cp0_we(cp0_we),
+    .cp0_rdc(cp0_rdc),
+    .eret_flush(eret_flush),
+    .branch_delay(branch_delay)
 );
 
 assign exe_rdc_valid = bypass_rdc_valid & exe_valid;
 assign exe_lw_instr = lw_instr & exe_valid;
+assign exe_mfc0_instr = mfc0_instr & exe_valid;
+assign exe_jump_instr = jump_instr & exe_valid;
 
 ext16 ext16
 (
@@ -249,7 +300,7 @@ mux4 hi_mux(
 hilo lo_reg
 (
     .clk(mem_clk),
-    .we(lo_we),
+    .we(lo_we & exe_valid & (!ex_no_write)),
     .in(lo_mux_out),
     .out(lo)
 );
@@ -257,7 +308,7 @@ hilo lo_reg
 hilo hi_reg
 (
     .clk(mem_clk),
-    .we(hi_we),
+    .we(hi_we & exe_valid & (!ex_no_write)),
     .in(hi_mux_out),
     .out(hi)
 );

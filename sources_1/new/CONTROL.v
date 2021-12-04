@@ -9,6 +9,8 @@
 
 
 module cu(
+    // input
+    
     // operation judgement dependency
     input wire [5:0] op,
     input wire [5:0] func,
@@ -27,6 +29,22 @@ module cu(
     // is src needed after LW instruction
     // pipe lw block
     input wire exe_lw_instr,
+    // pipe mfc0 block
+    input wire exe_mfc0_instr,
+    input wire mem_mfc0_instr,
+    // pipe branch delay
+    input wire exe_jump_instr,
+    // cp0 exception input
+    input wire ex_wb,
+    input wire cp0_flush,
+    input wire cp0_hlt,
+    input wire cp0_eret,
+    input wire cp0_ie,
+    input wire cp0_exl,
+    input wire [7:0] cp0_int_mask,
+    input wire [7:0] cp0_int_sig,
+    
+    // output
     
     // alu control signal 
     output wire [3:0] aluc,
@@ -49,9 +67,23 @@ module cu(
     output wire lo_we,
     output wire hi_we,
     // pipeline block signal
-    output wire lw_stall,
+    
+    output wire flush,
+    output wire stall,
+    output wire lw_instr,
+    output wire mfc0_instr,
+    output wire jump_instr,
+    // bypass 
     output wire bypass_rdc_valid,
-    output wire lw_instr
+    // cp0 exception output 
+    output wire ex,
+    output wire cp0_we,
+    output wire [4:0] ex_code,
+    output wire [0:0] cp0_rd_mux_sel,
+    output wire [4:0] cp0_rdc,
+    output wire eret_flush,
+    output wire branch_delay
+    
 );
 
 wire op_addu, op_add, op_addiu, op_addi;
@@ -66,10 +98,12 @@ wire op_beq, op_bne;
 wire op_j, op_jal, op_jr;
 wire op_mult, op_multu;
 wire op_mfhi, op_mflo, op_mthi, op_mtlo;
+wire op_mfc0, op_mtc0;
+wire op_eret;
 
 
 wire instr_no_write;
-wire instr_both_visit, instr_rs_visit;
+wire instr_both_visit, instr_rs_visit, instr_rt_visit;
 
 // instruction recognize
 assign op_addu      = (op == 6'b000000) && (func == 6'b100001);
@@ -109,12 +143,14 @@ assign op_mfhi      = (op == 6'b000000) && (func == 6'b010000);
 assign op_mflo      = (op == 6'b000000) && (func == 6'b010010);
 assign op_mthi      = (op == 6'b000000) && (func == 6'b010001);
 assign op_mtlo      = (op == 6'b000000) && (func == 6'b010011);
-
+assign op_mfc0      = (op == 6'b010000) && (id_rsc == 5'b00000);
+assign op_mfc0      = (op == 6'b010000) && (id_rst == 5'b00000);
+assign op_eret      = (op == 6'b010000) && (func == 6'b011000);
 
 
 assign instr_no_write = op_sw   | op_beq    | op_bne    | op_j      | 
                         op_jr   | op_mult   | op_multu  | op_mthi   | 
-                        op_mtlo;
+                        op_mtlo | op_mtc0;
 assign instr_rs_visit = op_jr   | op_addiu  | op_addi   | op_sltiu  | 
                         op_slti | op_andi   | op_ori    | op_xori   |
                         op_sll  | op_srl    | op_sra    | op_mthi   |
@@ -124,6 +160,33 @@ assign instr_both_visit = op_addu   | op_add    | op_subu   | op_sub    |
                           op_xor    | op_nor    | op_sllv   | op_srlv   |
                           op_srav   | op_sw     | op_beq    | op_bne    |
                           op_mult   | op_multu;
+assign instr_rt_visit = op_mtc0;
+
+// interrupt management
+parameter EX_CODE_INT = 5'h00;
+parameter EX_CODE_HLT = 5'h01;
+parameter EX_CODE_RESUME = 5'h02;
+
+wire has_int;
+wire int_resume;
+assign has_int = ((cp0_int_sig[7:0] & cp0_int_mask[7:0]) != 8'h00) &&
+                 cp0_ie == 1'b1 && cp0_exl == 1'b1;
+            // don't response resume interrupt except in halt status
+            // hlt will enforce the cpu to kernal mode and in infinite loop
+            // and it won't be treated in times
+assign int_resume = cp0_int_sig[7] & cp0_int_mask[7];
+assign ex = ((has_int & !int_resume) & !cp0_exl) 
+            || (cp0_hlt & (int_resume));
+            
+assign ex_code = (!ex) ? EX_CODE_INT :
+                 (cp0_int_sig[7] & cp0_int_mask[7]) ? EX_CODE_HLT :
+                 (cp0_int_sig[6] & cp0_int_mask[6]) ? EX_CODE_RESUME :
+                 EX_CODE_INT;
+assign cp0_we = op_mtc0;
+assign cp0_rd_mux_sel = (op_mfc0) ? 1'b1 : 1'b0;
+assign cp0_rdc = id_rdc;
+assign eret_flush = op_eret;
+assign branch_delay = exe_jump_instr;
 
 // alu control
 assign aluc = ({4{ op_addu | op_addiu }} & 4'b0000) 
@@ -147,7 +210,8 @@ assign aluc = ({4{ op_addu | op_addiu }} & 4'b0000)
 //assign npc_mux_sel[1] = op_jr   | op_j                  | op_jal;
 //assign npc_mux_sel[0] = op_jr   | (op_beq & eq_flag)    | (op_bne & !eq_flag);
 
-assign npc_mux_sel = (op_jr) ? 3'b011 :
+assign npc_mux_sel = (ex_wb | cp0_hlt | cp0_eret) ? 3'b100 :
+                     (op_jr) ? 3'b011 :
                      (op_j | op_jal) ? 3'b010 :
                      ( (op_beq & eq_flag) | (op_bne & !eq_flag) ) ? 3'b001:
                      3'b000;
@@ -166,9 +230,9 @@ assign rs_mux_sel = ((instr_rs_visit || instr_both_visit)
                     ((instr_rs_visit || instr_both_visit) 
                         && mem_rdc_valid && id_rsc == wb_rdc ) ? 2'b11 : 
                                                                  2'b00;
-assign rt_mux_sel = ((instr_both_visit) && exe_rdc_valid && id_rtc == exe_rdc) ? 2'b01 :
-                    ((instr_both_visit) && mem_rdc_valid && id_rtc == mem_rdc) ? 2'b10 :
-                    ((instr_both_visit) && wb_rdc_valid  && id_rtc == wb_rdc ) ? 2'b11 : 2'b00;
+assign rt_mux_sel = ((instr_both_visit || instr_rt_visit) && exe_rdc_valid && id_rtc == exe_rdc) ? 2'b01 :
+                    ((instr_both_visit || instr_rt_visit) && mem_rdc_valid && id_rtc == mem_rdc) ? 2'b10 :
+                    ((instr_both_visit || instr_rt_visit) && wb_rdc_valid  && id_rtc == wb_rdc ) ? 2'b11 : 2'b00;
                     
 assign rdc_mux_sel = (op_jal) ? 2'b10 : 
                      (op_addiu | op_addi | op_sltiu | op_slti | op_andi | op_ori |
@@ -212,8 +276,23 @@ assign hi_we = op_mthi | op_mult | op_multu;
 // and RAW with LW in exe stage, pipeline should be blocked
 
 assign lw_instr = op_lw;
+assign mfc0_instr = op_mfc0;
+assign jump_instr = op_j || op_jr || op_jal || op_beq || op_bne;
 
+assign flush = cp0_eret || ex_wb;
+
+wire lw_stall;
+wire mfc0_stall;
 assign lw_stall = ((exe_lw_instr) && instr_rs_visit && (id_rsc == exe_rdc)) ||
+                  ((exe_lw_instr) && instr_rt_visit && (id_rtc == exe_rdc)) ||
                   ((exe_lw_instr) && instr_both_visit && ((id_rsc == exe_rdc) || (id_rtc == exe_rdc)));
+assign mfc0_stall = ((exe_mfc0_instr) && instr_rs_visit && (id_rsc == exe_rdc)) || 
+                    ((exe_mfc0_instr) && instr_rt_visit && (id_rtc == exe_rdc)) ||
+                    ((mem_mfc0_instr) && instr_rs_visit && (id_rsc == mem_rdc)) || 
+                    ((mem_mfc0_instr) && instr_rt_visit && (id_rtc == mem_rdc)) ||
+                    ((exe_mfc0_instr) && instr_both_visit && ((id_rsc == exe_rdc) || (id_rtc == exe_rdc))) ||
+                    ((mem_mfc0_instr) && instr_both_visit && ((id_rsc == mem_rdc) || (id_rtc == mem_rdc)));
+                    
 
+assign stall = lw_stall | mfc0_stall;
 endmodule

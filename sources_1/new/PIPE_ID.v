@@ -16,6 +16,7 @@ module pipe_id
     input wire mem_clk,
     input wire exe_allowin,
     input wire if_id_validto,
+    input wire flush_id_exe,
     // if pipe data input
     input wire [31:0] pc_in,
     input wire [31:0] instr_in,
@@ -34,8 +35,20 @@ module pipe_id
     input wire wb_rdc_valid,
     // pipe lw block
     input wire exe_lw_instr,
+    input wire exe_mfc0_instr,
+    input wire mem_mfc0_instr,
+    input wire exe_jump_instr,
     // external argument in
     input wire [4:0] arguments,
+    // cp0 exception status
+    input wire ex_wb,
+    input wire cp0_flush,
+    input wire cp0_hlt,
+    input wire cp0_eret,
+    input wire cp0_ie,
+    input wire cp0_exl,
+    input wire [7:0] cp0_int_mask,
+    input wire [7:0] cp0_int_sig,
     
     // pipe control signal
     output wire id_allowin,
@@ -68,20 +81,31 @@ module pipe_id
     output wire hi_we,
     // instruction level bypass valid 
     output wire bypass_rdc_valid,
+    // pipeline block cross segments signal
+    output wire flush,
     output wire lw_instr,
+    output wire mfc0_instr,
+    output wire jump_instr,
     // throw eggs test result in $1 register 
-    output wire [31:0] test_result
-    
+    output wire [31:0] test_result,
+    // cp0 exception action output 
+    output wire ex,
+    output wire cp0_we,
+    output wire [4:0] ex_code,
+    output wire [0:0] cp0_rd_mux_sel,
+    output wire [4:0] cp0_rdc,
+    output wire eret_flush,
+    output wire branch_delay
 );
 
 reg id_valid;
 wire id_ready_go;
 
-wire lw_stall;
+wire stall;
 
 assign id_allowin = !id_valid || (id_ready_go && exe_allowin);
-assign id_exe_validto = id_valid && id_ready_go;
-assign id_ready_go = !lw_stall;
+assign id_exe_validto = id_valid && id_ready_go && (!flush_id_exe);
+assign id_ready_go = !stall;
 
 always @ (posedge clk or posedge rst) begin
     if(rst) begin
@@ -190,11 +214,23 @@ cu cu(
     .wb_rdc(rdc_wb),
     .exe_rdc_valid(exe_rdc_valid),
     .mem_rdc_valid(mem_rdc_valid),
+    .exe_jump_instr(exe_jump_instr),
     .wb_rdc_valid(wb_rdc_valid),
     // beq bne jump 
     .eq_flag(eq_flag),
     // is src needed after LW instruction
     .exe_lw_instr(exe_lw_instr),
+    .exe_mfc0_instr(exe_mfc0_instr),
+    .mem_mfc0_instr(mem_mfc0_instr),
+    
+    .ex_wb(ex_wb),
+    .cp0_flush(cp0_flush),
+    .cp0_hlt(cp0_hlt),
+    .cp0_eret(cp0_eret),
+    .cp0_ie(cp0_ie),
+    .cp0_exl(cp0_exl),
+    .cp0_int_mask(cp0_int_mask),
+    .cp0_int_sig(cp0_int_sig),
     
     // output
     
@@ -219,9 +255,22 @@ cu cu(
     .lo_we(lo_we),
     .hi_we(hi_we),
     
-    .lw_stall(lw_stall),
+    .flush(flush),
+    .stall(stall),
+    .lw_instr(lw_instr),
+    .mfc0_instr(mfc0_instr),
+    .jump_instr(jump_instr),
+    
     .bypass_rdc_valid(bypass_rdc_valid),
-    .lw_instr(lw_instr)
+    
+    .ex(ex),
+    .cp0_we(cp0_we),
+    .ex_code(ex_code),
+    .cp0_rd_mux_sel(cp0_rd_mux_sel),
+    .cp0_rdc(cp0_rdc),
+    .eret_flush(eret_flush),
+    .branch_delay(branch_delay)
+    
 );
 
 

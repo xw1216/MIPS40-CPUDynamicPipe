@@ -62,10 +62,16 @@ wire [ 0:0] cp0_we_id, cp0_we_exe, cp0_we_mem;
 wire [ 4:0] cp0_rdc_id, cp0_rdc_exe, cp0_rdc_mem;
 wire [ 0:0] eret_flush_id, eret_flush_exe, eret_flush_mem;
 wire [ 0:0] branch_delay_id, branch_delay_exe, branch_delay_mem;
-wire [ 0:0] flush_if_id, flush_id_exe, flush_exe_mem, flush_mem_wb;
+
+wire [ 0:0] flush, flush_if_id, flush_id_exe, 
+            flush_exe_mem, flush_mem_wb;
+// TODO: check pc rt lw mfc0 trans
+
 wire [ 0:0] cp0_flush;
 wire [ 0:0] cp0_ie;
 wire [ 0:0] cp0_exl;
+wire [ 0:0] cp0_hlt;
+wire [ 0:0] cp0_eret;
 wire [ 7:0] cp0_int_mask;
 wire [ 7:0] cp0_int_sig;
 wire [31:0] cp0_epc;
@@ -101,12 +107,17 @@ wire lo_we, hi_we;
 wire lw_instr, exe_lw_instr;
 // TODO: add mfc0 pipeline block
 wire mfc0_instr, exe_mfc0_instr, mem_mfc0_instr;
+wire jump_instr, exe_jump_instr;
 wire [31:0] test_result;
 wire [31:0] pc_out;
 wire [31:0] hi, lo;
 
 assign pc_out = pc_id;
 //assign o_test_result = test_result[15:0];
+assign flush_if_id = flush;
+assign flush_id_exe = flush;
+assign flush_exe_mem = flush;
+assign flush_mem_wb = flush;
 
 pipe_if pipe_if
 (
@@ -117,6 +128,7 @@ pipe_if pipe_if
     .mem_clk(mem_clk),
     .rst(rst),
     .id_allowin(id_allowin),
+    .flush_if_id(flush_if_id),
     // pc jump data from id
     .rs_pc_in(rs_id),
     .imm_in(j_imm),
@@ -143,6 +155,7 @@ pipe_id pipe_id
     .mem_clk(mem_clk),
     .exe_allowin(exe_allowin),
     .if_id_validto(if_id_validto),
+    .flush_id_exe(flush_id_exe),
     // if pipe data input
     .pc_in(pc_if),
     .instr_in(instr),
@@ -161,8 +174,20 @@ pipe_id pipe_id
     .wb_rdc_valid(wb_rdc_valid),
     // pipe lw block
     .exe_lw_instr(exe_lw_instr),
+    .exe_mfc0_instr(exe_mfc0_instr),
+    .mem_mfc0_instr(mem_mfc0_instr),
+    .exe_jump_instr(exe_jump_instr),
     // external argument in
     .arguments(arguments),
+    // cp0 exception status
+    .ex_wb(ex_wb),
+    .cp0_flush(cp0_flush),
+    .cp0_hlt(cp0_hlt),
+    .cp0_eret(cp0_eret),
+    .cp0_ie(cp0_ie),
+    .cp0_exl(cp0_exl),
+    .cp0_int_mask(cp0_int_mask),
+    .cp0_int_sig(cp0_int_sig),
     
     // output
     
@@ -197,9 +222,21 @@ pipe_id pipe_id
     .hi_we(hi_we),
     // instruction level bypass valid 
     .bypass_rdc_valid(bypass_rdc_valid_id),
+    // pipeline block cross segments signal
+    .flush(flush),
     .lw_instr(lw_instr),
+    .mfc0_instr(mfc0_instr),
+    .jump_instr(jump_instr),
     // throw eggs test result in $1 register 
-    .test_result(test_result)
+    .test_result(test_result),
+    // cp0 exception action output 
+    .ex(ex_id),
+    .cp0_we(cp0_we_id),
+    .ex_code(ex_code_id),
+    .cp0_rd_mux_sel(cp0_rd_mux_sel_id),
+    .cp0_rdc(cp0_rdc_id),
+    .eret_flush(eret_flush_id),
+    .branch_delay(branch_delay_id)
 );
 
 pipe_exe pipe_exe
@@ -213,6 +250,7 @@ pipe_exe pipe_exe
     .mem_allowin(mem_allowin),
     .id_exe_validto(id_exe_validto),
     .bypass_rdc_valid_in(bypass_rdc_valid_id),
+    .flush_exe_mem(flush_exe_mem),
     // id pipe data input
     .pc_in(pc_id),
     .sa_in(sa),
@@ -237,6 +275,16 @@ pipe_exe pipe_exe
     .hi_we_in(hi_we),
     // specific instruction pipeline block
     .lw_instr_in(lw_instr),
+    .mfc0_instr_in(mfc0_instr),
+    .jump_instr_in(jump_instr),
+    // exception trans
+    .ex_in(ex_id),
+    .ex_code_in(ex_code_id),
+    .cp0_rd_mux_sel_in(cp0_rd_mux_sel_id),
+    .cp0_we_in(cp0_we_id),
+    .cp0_rdc_in(cp0_rdc_id),
+    .eret_flush_in(eret_flush_id),
+    .branch_delay_in(branch_delay_id),
     
     // output
     
@@ -244,6 +292,7 @@ pipe_exe pipe_exe
     .exe_allowin(exe_allowin),
     .exe_mem_validto(exe_mem_validto),
     // pipe backward data
+    .pc(pc_exe),
     .rt(rt_exe),
     .alu_result(alu_result),
     .rdc_exe(rdc_exe),
@@ -257,6 +306,16 @@ pipe_exe pipe_exe
     // pipe mux signal backward
     .rd_mux_sel(rd_mux_sel_exe),
     .exe_lw_instr(exe_lw_instr),
+    .exe_mfc0_instr(exe_mfc0_instr),
+    .exe_jump_instr(exe_jump_instr),
+    // exception trans
+    .ex(ex_exe),
+    .ex_code(ex_code_exe),
+    .cp0_rd_mux_sel(cp0_rd_mux_sel_exe),
+    .cp0_we(cp0_we_exe),
+    .cp0_rdc(cp0_rdc_exe),
+    .eret_flush(eret_flush_exe),
+    .branch_delay(branch_delay_exe),
     // hilo register out
     .lo(lo),
     .hi(hi)
@@ -271,6 +330,9 @@ pipe_mem pipe_mem
     .clk(clk),
     .mem_clk(mem_clk),
     .rst(rst),
+    .flush_mem_wb(flush_mem_wb),
+    .ex_wb(ex_wb),
+    
     .wb_allowin(wb_allowin),
     .exe_mem_validto(exe_mem_validto),
     .bypass_rdc_valid_in(bypass_rdc_valid_exe),
@@ -278,6 +340,7 @@ pipe_mem pipe_mem
     .dmem_we_in(dmem_we_exe),
     .rf_we_in(rf_we_exe),
     // exe pipe data input
+    .pc_in(pc_exe),
     .rt_in(rt_exe),
     .alu_result_in(alu_result),
     .rdc_exe_in(rdc_exe),
@@ -286,8 +349,19 @@ pipe_mem pipe_mem
     .lo_in(lo),
     .hi_in(hi),
     
-    // output
+    .mfc0_instr_in(exe_mfc0_instr),
+    // exception trans
+    .ex_in(ex_exe),
+    .ex_code_in(ex_code_exe),
+    .cp0_rd_mux_sel_in(cp0_rd_mux_sel_exe),
+    .cp0_we_in(cp0_we_exe),
+    .cp0_rdc_in(cp0_rdc_exe),
+    .eret_flush_in(eret_flush_exe),
+    .branch_delay_in(branch_delay_exe),
     
+    // output
+    .pc(pc_mem),
+    .rt(rt_mem),
     // pipe control signal
     .mem_allowin(mem_allowin),
     .mem_wb_validto(mem_wb_validto),
@@ -299,7 +373,17 @@ pipe_mem pipe_mem
     .mem_rdc_valid(mem_rdc_valid),
     .bypass_rdc_valid(bypass_rdc_valid_mem),
     // memory write signal out
-    .rf_we(rf_we_mem)
+    .rf_we(rf_we_mem),
+    
+    .mem_mfc0_instr(mem_mfc0_instr),
+    // exception trans
+    .ex(ex_mem),
+    .ex_code(ex_code_mem),
+    .cp0_rd_mux_sel(cp0_rd_mux_sel_mem),
+    .cp0_we(cp0_we_mem),
+    .cp0_rdc(cp0_rdc_mem),
+    .eret_flush(eret_flush_mem),
+    .branch_delay(branch_delay_mem)
     
 );
 
@@ -319,17 +403,17 @@ pipe_wb pipe_wb
     // memory write signal in 
     .rf_we_in(rf_we_mem),
     // cp0 input signal
-    .cp0_rd_mux_sel_in(),
-    .cp0_we_in(),
-    .ex_wb_in(),
-    .eret_flush_in(),
-    .branch_delay_wb_in(),
+    .cp0_rd_mux_sel_in(cp0_rd_mux_sel_mem),
+    .cp0_we_in(cp0_we_mem),
+    .ex_wb_in(ex_mem),
+    .eret_flush_in(eret_flush_mem),
+    .branch_delay_wb_in(branch_delay_mem),
     
-    .cp0_rdc_in(),
-    .int_sig_in(),
-    .cp0_data_in(),
-    .pc_in(),
-    .ex_code_in(),
+    .cp0_rdc_in(cp0_rdc_mem),
+    .int_sig_in({interrupt, 3'b0}),
+    .cp0_data_in(rt_mem),
+    .pc_in(pc_mem),
+    .ex_code_in(ex_code_mem),
     
     // output
     
@@ -344,17 +428,18 @@ pipe_wb pipe_wb
     .bypass_wb(bypass_wb),
     .wb_rdc_valid(wb_rdc_valid),
     
-    .ex(),
-    .flush(),
-    .hlt(),
+    .ex(ex_wb),
+    .flush(cp0_flush),
+    .hlt(cp0_hlt),
+    .eret(cp0_eret),
     // STATUS region
-    .ie(),
-    .exl(),
-    .int_mask(),
+    .ie(cp0_ie),
+    .exl(cp0_exl),
+    .int_mask(cp0_int_mask),
     // CAUSE regoin
-    .int_sig(),
+    .int_sig(cp0_int_sig),
     // EPC region
-    .epc_out()
+    .epc_out(cp0_epc)
 );
 
 
