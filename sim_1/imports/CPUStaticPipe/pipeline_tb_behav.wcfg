@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="pipeline_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="pipeline_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="2,692.000001 us"></ZoomEndTime>
+      <Cursor1Time time="113.355000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="198"></NameColumnWidth>
+      <ValueColumnWidth column_width="59"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wave_markers>
+      <marker time="865835000" label="" />
+      <marker time="100255000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/pipeline_tb/uut/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pipeline_tb/uut/mem_clk" type="logic">
+      <obj_property name="ElementShortName">mem_clk</obj_property>
+      <obj_property name="ObjectShortName">mem_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pipeline_tb/uut/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pipeline_tb/arguments" type="array">
+      <obj_property name="ElementShortName">arguments[15:0]</obj_property>
+      <obj_property name="ObjectShortName">arguments[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pipeline_tb/uut/pc_out" type="array">
+      <obj_property name="ElementShortName">pc_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group722" type="group">
+      <obj_property name="label">regfiles</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/we" type="logic">
+         <obj_property name="ElementShortName">we</obj_property>
+         <obj_property name="ObjectShortName">we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/raddr1" type="array">
+         <obj_property name="ElementShortName">raddr1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">raddr1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/raddr2" type="array">
+         <obj_property name="ElementShortName">raddr2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">raddr2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/rdata1" type="array">
+         <obj_property name="ElementShortName">rdata1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rdata1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/rdata2" type="array">
+         <obj_property name="ElementShortName">rdata2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rdata2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/waddr" type="array">
+         <obj_property name="ElementShortName">waddr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">waddr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/wdata" type="array">
+         <obj_property name="ElementShortName">wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array" type="array">
+         <obj_property name="ElementShortName">reg_array[31:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_array[31:0][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[31]" type="array">
+            <obj_property name="ElementShortName">[31][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[31][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[30]" type="array">
+            <obj_property name="ElementShortName">[30][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[30][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[29]" type="array">
+            <obj_property name="ElementShortName">[29][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[29][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[28]" type="array">
+            <obj_property name="ElementShortName">[28][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[28][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[27]" type="array">
+            <obj_property name="ElementShortName">[27][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[27][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[26]" type="array">
+            <obj_property name="ElementShortName">[26][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[26][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[25]" type="array">
+            <obj_property name="ElementShortName">[25][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[25][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[24]" type="array">
+            <obj_property name="ElementShortName">[24][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[24][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[23]" type="array">
+            <obj_property name="ElementShortName">[23][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[23][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[22]" type="array">
+            <obj_property name="ElementShortName">[22][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[22][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[21]" type="array">
+            <obj_property name="ElementShortName">[21][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[21][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[20]" type="array">
+            <obj_property name="ElementShortName">[20][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[20][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[19]" type="array">
+            <obj_property name="ElementShortName">[19][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[19][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[18]" type="array">
+            <obj_property name="ElementShortName">[18][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[18][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[17]" type="array">
+            <obj_property name="ElementShortName">[17][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[16]" type="array">
+            <obj_property name="ElementShortName">[16][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[15]" type="array">
+            <obj_property name="ElementShortName">[15][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[14]" type="array">
+            <obj_property name="ElementShortName">[14][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[13]" type="array">
+            <obj_property name="ElementShortName">[13][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[12]" type="array">
+            <obj_property name="ElementShortName">[12][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[11]" type="array">
+            <obj_property name="ElementShortName">[11][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[10]" type="array">
+            <obj_property name="ElementShortName">[10][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[9]" type="array">
+            <obj_property name="ElementShortName">[9][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[8]" type="array">
+            <obj_property name="ElementShortName">[8][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[7]" type="array">
+            <obj_property name="ElementShortName">[7][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[6]" type="array">
+            <obj_property name="ElementShortName">[6][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[5]" type="array">
+            <obj_property name="ElementShortName">[5][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[4]" type="array">
+            <obj_property name="ElementShortName">[4][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[31]" type="array">
+            <obj_property name="ElementShortName">[31][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[31][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[30]" type="array">
+            <obj_property name="ElementShortName">[30][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[30][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[29]" type="array">
+            <obj_property name="ElementShortName">[29][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[29][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[28]" type="array">
+            <obj_property name="ElementShortName">[28][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[28][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[27]" type="array">
+            <obj_property name="ElementShortName">[27][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[27][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[26]" type="array">
+            <obj_property name="ElementShortName">[26][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[26][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[25]" type="array">
+            <obj_property name="ElementShortName">[25][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[25][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[24]" type="array">
+            <obj_property name="ElementShortName">[24][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[24][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[23]" type="array">
+            <obj_property name="ElementShortName">[23][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[23][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[22]" type="array">
+            <obj_property name="ElementShortName">[22][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[22][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[21]" type="array">
+            <obj_property name="ElementShortName">[21][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[21][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[20]" type="array">
+            <obj_property name="ElementShortName">[20][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[20][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[19]" type="array">
+            <obj_property name="ElementShortName">[19][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[19][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[18]" type="array">
+            <obj_property name="ElementShortName">[18][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[18][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[17]" type="array">
+            <obj_property name="ElementShortName">[17][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[16]" type="array">
+            <obj_property name="ElementShortName">[16][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[15]" type="array">
+            <obj_property name="ElementShortName">[15][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[14]" type="array">
+            <obj_property name="ElementShortName">[14][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[13]" type="array">
+            <obj_property name="ElementShortName">[13][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[12]" type="array">
+            <obj_property name="ElementShortName">[12][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[11]" type="array">
+            <obj_property name="ElementShortName">[11][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[10]" type="array">
+            <obj_property name="ElementShortName">[10][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[9]" type="array">
+            <obj_property name="ElementShortName">[9][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[8]" type="array">
+            <obj_property name="ElementShortName">[8][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[7]" type="array">
+            <obj_property name="ElementShortName">[7][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[6]" type="array">
+            <obj_property name="ElementShortName">[6][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[5]" type="array">
+            <obj_property name="ElementShortName">[5][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[4]" type="array">
+            <obj_property name="ElementShortName">[4][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/regfiles/reg_array[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_exe/lo" type="array">
+         <obj_property name="ElementShortName">lo[31:0]</obj_property>
+         <obj_property name="ObjectShortName">lo[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_exe/hi" type="array">
+         <obj_property name="ElementShortName">hi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">hi[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group733" type="group">
+      <obj_property name="label">op_type</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_addu" type="logic">
+         <obj_property name="ElementShortName">op_addu</obj_property>
+         <obj_property name="ObjectShortName">op_addu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_add" type="logic">
+         <obj_property name="ElementShortName">op_add</obj_property>
+         <obj_property name="ObjectShortName">op_add</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_addiu" type="logic">
+         <obj_property name="ElementShortName">op_addiu</obj_property>
+         <obj_property name="ObjectShortName">op_addiu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_addi" type="logic">
+         <obj_property name="ElementShortName">op_addi</obj_property>
+         <obj_property name="ObjectShortName">op_addi</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_subu" type="logic">
+         <obj_property name="ElementShortName">op_subu</obj_property>
+         <obj_property name="ObjectShortName">op_subu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_sub" type="logic">
+         <obj_property name="ElementShortName">op_sub</obj_property>
+         <obj_property name="ObjectShortName">op_sub</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_sltu" type="logic">
+         <obj_property name="ElementShortName">op_sltu</obj_property>
+         <obj_property name="ObjectShortName">op_sltu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_slt" type="logic">
+         <obj_property name="ElementShortName">op_slt</obj_property>
+         <obj_property name="ObjectShortName">op_slt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_sltiu" type="logic">
+         <obj_property name="ElementShortName">op_sltiu</obj_property>
+         <obj_property name="ObjectShortName">op_sltiu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_slti" type="logic">
+         <obj_property name="ElementShortName">op_slti</obj_property>
+         <obj_property name="ObjectShortName">op_slti</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_and" type="logic">
+         <obj_property name="ElementShortName">op_and</obj_property>
+         <obj_property name="ObjectShortName">op_and</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_andi" type="logic">
+         <obj_property name="ElementShortName">op_andi</obj_property>
+         <obj_property name="ObjectShortName">op_andi</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_or" type="logic">
+         <obj_property name="ElementShortName">op_or</obj_property>
+         <obj_property name="ObjectShortName">op_or</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_ori" type="logic">
+         <obj_property name="ElementShortName">op_ori</obj_property>
+         <obj_property name="ObjectShortName">op_ori</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_xor" type="logic">
+         <obj_property name="ElementShortName">op_xor</obj_property>
+         <obj_property name="ObjectShortName">op_xor</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_xori" type="logic">
+         <obj_property name="ElementShortName">op_xori</obj_property>
+         <obj_property name="ObjectShortName">op_xori</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_nor" type="logic">
+         <obj_property name="ElementShortName">op_nor</obj_property>
+         <obj_property name="ObjectShortName">op_nor</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_lui" type="logic">
+         <obj_property name="ElementShortName">op_lui</obj_property>
+         <obj_property name="ObjectShortName">op_lui</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_sll" type="logic">
+         <obj_property name="ElementShortName">op_sll</obj_property>
+         <obj_property name="ObjectShortName">op_sll</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_srl" type="logic">
+         <obj_property name="ElementShortName">op_srl</obj_property>
+         <obj_property name="ObjectShortName">op_srl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_sra" type="logic">
+         <obj_property name="ElementShortName">op_sra</obj_property>
+         <obj_property name="ObjectShortName">op_sra</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_sllv" type="logic">
+         <obj_property name="ElementShortName">op_sllv</obj_property>
+         <obj_property name="ObjectShortName">op_sllv</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_srlv" type="logic">
+         <obj_property name="ElementShortName">op_srlv</obj_property>
+         <obj_property name="ObjectShortName">op_srlv</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_srav" type="logic">
+         <obj_property name="ElementShortName">op_srav</obj_property>
+         <obj_property name="ObjectShortName">op_srav</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_lw" type="logic">
+         <obj_property name="ElementShortName">op_lw</obj_property>
+         <obj_property name="ObjectShortName">op_lw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_sw" type="logic">
+         <obj_property name="ElementShortName">op_sw</obj_property>
+         <obj_property name="ObjectShortName">op_sw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_beq" type="logic">
+         <obj_property name="ElementShortName">op_beq</obj_property>
+         <obj_property name="ObjectShortName">op_beq</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_bne" type="logic">
+         <obj_property name="ElementShortName">op_bne</obj_property>
+         <obj_property name="ObjectShortName">op_bne</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_j" type="logic">
+         <obj_property name="ElementShortName">op_j</obj_property>
+         <obj_property name="ObjectShortName">op_j</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_jal" type="logic">
+         <obj_property name="ElementShortName">op_jal</obj_property>
+         <obj_property name="ObjectShortName">op_jal</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_jr" type="logic">
+         <obj_property name="ElementShortName">op_jr</obj_property>
+         <obj_property name="ObjectShortName">op_jr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_mult" type="logic">
+         <obj_property name="ElementShortName">op_mult</obj_property>
+         <obj_property name="ObjectShortName">op_mult</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_multu" type="logic">
+         <obj_property name="ElementShortName">op_multu</obj_property>
+         <obj_property name="ObjectShortName">op_multu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_mfhi" type="logic">
+         <obj_property name="ElementShortName">op_mfhi</obj_property>
+         <obj_property name="ObjectShortName">op_mfhi</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_mflo" type="logic">
+         <obj_property name="ElementShortName">op_mflo</obj_property>
+         <obj_property name="ObjectShortName">op_mflo</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_mthi" type="logic">
+         <obj_property name="ElementShortName">op_mthi</obj_property>
+         <obj_property name="ObjectShortName">op_mthi</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/cu/op_mtlo" type="logic">
+         <obj_property name="ElementShortName">op_mtlo</obj_property>
+         <obj_property name="ObjectShortName">op_mtlo</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group117" type="group">
+      <obj_property name="label">pipe_if</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group603" type="group">
+         <obj_property name="label">if_pipe_signal</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/if_valid" type="logic">
+            <obj_property name="ElementShortName">if_valid</obj_property>
+            <obj_property name="ObjectShortName">if_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/if_allowin" type="logic">
+            <obj_property name="ElementShortName">if_allowin</obj_property>
+            <obj_property name="ObjectShortName">if_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/id_allowin" type="logic">
+            <obj_property name="ElementShortName">id_allowin</obj_property>
+            <obj_property name="ObjectShortName">id_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/if_id_validto" type="logic">
+            <obj_property name="ElementShortName">if_id_validto</obj_property>
+            <obj_property name="ObjectShortName">if_id_validto</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/if_ready_go" type="logic">
+            <obj_property name="ElementShortName">if_ready_go</obj_property>
+            <obj_property name="ObjectShortName">if_ready_go</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group604" type="group">
+         <obj_property name="label">npc_calcu</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/pc_mux_sel" type="array">
+            <obj_property name="ElementShortName">pc_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">pc_mux_sel[1:0]</obj_property>
+            <obj_property name="Radix">BINARYRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/npc_mux_out" type="array">
+            <obj_property name="ElementShortName">npc_mux_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">npc_mux_out[31:0]</obj_property>
+            <obj_property name="CustomSignalColor">#00FF00</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/npc_add_out" type="array">
+            <obj_property name="ElementShortName">npc_add_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">npc_add_out[31:0]</obj_property>
+            <obj_property name="CustomSignalColor">#00FF00</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/ext18_out" type="array">
+            <obj_property name="ElementShortName">ext18_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">ext18_out[31:0]</obj_property>
+            <obj_property name="CustomSignalColor">#00FF00</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/eq_add_out" type="array">
+            <obj_property name="ElementShortName">eq_add_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">eq_add_out[31:0]</obj_property>
+            <obj_property name="CustomSignalColor">#00FF00</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/join_out" type="array">
+            <obj_property name="ElementShortName">join_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">join_out[31:0]</obj_property>
+            <obj_property name="CustomSignalColor">#00FF00</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_if/rs_pc_in" type="array">
+            <obj_property name="ElementShortName">rs_pc_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">rs_pc_in[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_if/pc_out" type="array">
+         <obj_property name="ElementShortName">pc_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_if/instr" type="array">
+         <obj_property name="ElementShortName">instr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_if/imm_in" type="array">
+         <obj_property name="ElementShortName">imm_in[25:0]</obj_property>
+         <obj_property name="ObjectShortName">imm_in[25:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_if/imem_mapper_out" type="array">
+         <obj_property name="ElementShortName">imem_mapper_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">imem_mapper_out[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group137" type="group">
+      <obj_property name="label">pipe_id</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="group701" type="group">
+         <obj_property name="label">id_pipe_signal</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/id_valid" type="logic">
+            <obj_property name="ElementShortName">id_valid</obj_property>
+            <obj_property name="ObjectShortName">id_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/id_ready_go" type="logic">
+            <obj_property name="ElementShortName">id_ready_go</obj_property>
+            <obj_property name="ObjectShortName">id_ready_go</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/exe_allowin" type="logic">
+            <obj_property name="ElementShortName">exe_allowin</obj_property>
+            <obj_property name="ObjectShortName">exe_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/if_id_validto" type="logic">
+            <obj_property name="ElementShortName">if_id_validto</obj_property>
+            <obj_property name="ObjectShortName">if_id_validto</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/id_allowin" type="logic">
+            <obj_property name="ElementShortName">id_allowin</obj_property>
+            <obj_property name="ObjectShortName">id_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/id_exe_validto" type="logic">
+            <obj_property name="ElementShortName">id_exe_validto</obj_property>
+            <obj_property name="ObjectShortName">id_exe_validto</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/exe_lw_instr" type="logic">
+            <obj_property name="ElementShortName">exe_lw_instr</obj_property>
+            <obj_property name="ObjectShortName">exe_lw_instr</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/lw_instr" type="logic">
+            <obj_property name="ElementShortName">lw_instr</obj_property>
+            <obj_property name="ObjectShortName">lw_instr</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/lw_stall" type="logic">
+            <obj_property name="ElementShortName">lw_stall</obj_property>
+            <obj_property name="ObjectShortName">lw_stall</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/arguments" type="array">
+         <obj_property name="ElementShortName">arguments[15:0]</obj_property>
+         <obj_property name="ObjectShortName">arguments[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/pc_in" type="array">
+         <obj_property name="ElementShortName">pc_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/instr_in" type="array">
+         <obj_property name="ElementShortName">instr_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instr_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/rd_wb" type="array">
+         <obj_property name="ElementShortName">rd_wb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_wb[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/we_wb" type="logic">
+         <obj_property name="ElementShortName">we_wb</obj_property>
+         <obj_property name="ObjectShortName">we_wb</obj_property>
+      </wvobject>
+      <wvobject fp_name="group702" type="group">
+         <obj_property name="label">bypass</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/bypass_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">bypass_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">bypass_rdc_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/exe_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">exe_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">exe_rdc_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rdc_exe" type="array">
+            <obj_property name="ElementShortName">rdc_exe[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc_exe[4:0]</obj_property>
+            <obj_property name="Radix">OCTALRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/bypass_exe" type="array">
+            <obj_property name="ElementShortName">bypass_exe[31:0]</obj_property>
+            <obj_property name="ObjectShortName">bypass_exe[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/mem_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">mem_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">mem_rdc_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rdc_mem" type="array">
+            <obj_property name="ElementShortName">rdc_mem[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc_mem[4:0]</obj_property>
+            <obj_property name="Radix">OCTALRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/bypass_mem" type="array">
+            <obj_property name="ElementShortName">bypass_mem[31:0]</obj_property>
+            <obj_property name="ObjectShortName">bypass_mem[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/wb_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">wb_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">wb_rdc_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rdc_wb" type="array">
+            <obj_property name="ElementShortName">rdc_wb[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc_wb[4:0]</obj_property>
+            <obj_property name="Radix">OCTALRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/bypass_wb" type="array">
+            <obj_property name="ElementShortName">bypass_wb[31:0]</obj_property>
+            <obj_property name="ObjectShortName">bypass_wb[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group708" type="group">
+         <obj_property name="label">data_dispatcher</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/pc_out" type="array">
+            <obj_property name="ElementShortName">pc_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">pc_out[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/instr_out" type="array">
+            <obj_property name="ElementShortName">instr_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">instr_out[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/sa" type="array">
+            <obj_property name="ElementShortName">sa[4:0]</obj_property>
+            <obj_property name="ObjectShortName">sa[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/j_imm" type="array">
+            <obj_property name="ElementShortName">j_imm[25:0]</obj_property>
+            <obj_property name="ObjectShortName">j_imm[25:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/imm" type="array">
+            <obj_property name="ElementShortName">imm[15:0]</obj_property>
+            <obj_property name="ObjectShortName">imm[15:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/op" type="array">
+            <obj_property name="ElementShortName">op[5:0]</obj_property>
+            <obj_property name="ObjectShortName">op[5:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rsc" type="array">
+            <obj_property name="ElementShortName">rsc[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rsc[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rtc" type="array">
+            <obj_property name="ElementShortName">rtc[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rtc[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rdc" type="array">
+            <obj_property name="ElementShortName">rdc[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rs" type="array">
+            <obj_property name="ElementShortName">rs[31:0]</obj_property>
+            <obj_property name="ObjectShortName">rs[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rt" type="array">
+            <obj_property name="ElementShortName">rt[31:0]</obj_property>
+            <obj_property name="ObjectShortName">rt[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group709" type="group">
+         <obj_property name="label">mux_control</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rs_mux_sel" type="array">
+            <obj_property name="ElementShortName">rs_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">rs_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rt_mux_sel" type="array">
+            <obj_property name="ElementShortName">rt_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">rt_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rdc_mux_sel" type="array">
+            <obj_property name="ElementShortName">rdc_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/npc_mux_sel" type="array">
+            <obj_property name="ElementShortName">npc_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">npc_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/ext5_mux_sel" type="array">
+            <obj_property name="ElementShortName">ext5_mux_sel[0:0]</obj_property>
+            <obj_property name="ObjectShortName">ext5_mux_sel[0:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/alu_a_mux_sel" type="array">
+            <obj_property name="ElementShortName">alu_a_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_a_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/alu_b_mux_sel" type="array">
+            <obj_property name="ElementShortName">alu_b_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_b_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/rd_mux_sel" type="array">
+            <obj_property name="ElementShortName">rd_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">rd_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/lo_mux_sel" type="array">
+            <obj_property name="ElementShortName">lo_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">lo_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/hi_mux_sel" type="array">
+            <obj_property name="ElementShortName">hi_mux_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">hi_mux_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_id/exe_bypass_sel" type="array">
+            <obj_property name="ElementShortName">exe_bypass_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">exe_bypass_sel[1:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/rs_mux_out" type="array">
+         <obj_property name="ElementShortName">rs_mux_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs_mux_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/rt_mux_out" type="array">
+         <obj_property name="ElementShortName">rt_mux_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_mux_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/rdc_mux_out" type="array">
+         <obj_property name="ElementShortName">rdc_mux_out[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdc_mux_out[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/mul_sign" type="logic">
+         <obj_property name="ElementShortName">mul_sign</obj_property>
+         <obj_property name="ObjectShortName">mul_sign</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/aluc" type="array">
+         <obj_property name="ElementShortName">aluc[3:0]</obj_property>
+         <obj_property name="ObjectShortName">aluc[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/dmem_we" type="logic">
+         <obj_property name="ElementShortName">dmem_we</obj_property>
+         <obj_property name="ObjectShortName">dmem_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/rf_we" type="logic">
+         <obj_property name="ElementShortName">rf_we</obj_property>
+         <obj_property name="ObjectShortName">rf_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/lo_we" type="logic">
+         <obj_property name="ElementShortName">lo_we</obj_property>
+         <obj_property name="ObjectShortName">lo_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/hi_we" type="logic">
+         <obj_property name="ElementShortName">hi_we</obj_property>
+         <obj_property name="ObjectShortName">hi_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_id/eq_flag" type="logic">
+         <obj_property name="ElementShortName">eq_flag</obj_property>
+         <obj_property name="ObjectShortName">eq_flag</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group191" type="group">
+      <obj_property name="label">pipe_exe</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group711" type="group">
+         <obj_property name="label">exe_pipe_signal</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/exe_valid" type="logic">
+            <obj_property name="ElementShortName">exe_valid</obj_property>
+            <obj_property name="ObjectShortName">exe_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/exe_allowin" type="logic">
+            <obj_property name="ElementShortName">exe_allowin</obj_property>
+            <obj_property name="ObjectShortName">exe_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/exe_ready_go" type="logic">
+            <obj_property name="ElementShortName">exe_ready_go</obj_property>
+            <obj_property name="ObjectShortName">exe_ready_go</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/mem_allowin" type="logic">
+            <obj_property name="ElementShortName">mem_allowin</obj_property>
+            <obj_property name="ObjectShortName">mem_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/id_exe_validto" type="logic">
+            <obj_property name="ElementShortName">id_exe_validto</obj_property>
+            <obj_property name="ObjectShortName">id_exe_validto</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/exe_mem_validto" type="logic">
+            <obj_property name="ElementShortName">exe_mem_validto</obj_property>
+            <obj_property name="ObjectShortName">exe_mem_validto</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/exe_lw_instr" type="logic">
+            <obj_property name="ElementShortName">exe_lw_instr</obj_property>
+            <obj_property name="ObjectShortName">exe_lw_instr</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/lw_instr_in" type="logic">
+            <obj_property name="ElementShortName">lw_instr_in</obj_property>
+            <obj_property name="ObjectShortName">lw_instr_in</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/lw_instr" type="logic">
+            <obj_property name="ElementShortName">lw_instr</obj_property>
+            <obj_property name="ObjectShortName">lw_instr</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group710" type="group">
+         <obj_property name="label">pipe_exe_reg_in</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/pc_in" type="array">
+            <obj_property name="ElementShortName">pc_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">pc_in[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/sa_in" type="array">
+            <obj_property name="ElementShortName">sa_in[4:0]</obj_property>
+            <obj_property name="ObjectShortName">sa_in[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/imm_in" type="array">
+            <obj_property name="ElementShortName">imm_in[15:0]</obj_property>
+            <obj_property name="ObjectShortName">imm_in[15:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rs_in" type="array">
+            <obj_property name="ElementShortName">rs_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">rs_in[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rt_in" type="array">
+            <obj_property name="ElementShortName">rt_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">rt_in[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rdc_in" type="array">
+            <obj_property name="ElementShortName">rdc_in[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc_in[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/aluc_in" type="array">
+            <obj_property name="ElementShortName">aluc_in[3:0]</obj_property>
+            <obj_property name="ObjectShortName">aluc_in[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/ext5_sel_in" type="array">
+            <obj_property name="ElementShortName">ext5_sel_in[0:0]</obj_property>
+            <obj_property name="ObjectShortName">ext5_sel_in[0:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/alu_a_sel_in" type="array">
+            <obj_property name="ElementShortName">alu_a_sel_in[1:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_a_sel_in[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/alu_b_sel_in" type="array">
+            <obj_property name="ElementShortName">alu_b_sel_in[1:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_b_sel_in[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rd_mux_sel_in" type="array">
+            <obj_property name="ElementShortName">rd_mux_sel_in[1:0]</obj_property>
+            <obj_property name="ObjectShortName">rd_mux_sel_in[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/dmem_we_in" type="logic">
+            <obj_property name="ElementShortName">dmem_we_in</obj_property>
+            <obj_property name="ObjectShortName">dmem_we_in</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rf_we_in" type="logic">
+            <obj_property name="ElementShortName">rf_we_in</obj_property>
+            <obj_property name="ObjectShortName">rf_we_in</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/bypass_rdc_valid_in" type="logic">
+            <obj_property name="ElementShortName">bypass_rdc_valid_in</obj_property>
+            <obj_property name="ObjectShortName">bypass_rdc_valid_in</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group712" type="group">
+         <obj_property name="label">alu</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/pc" type="array">
+            <obj_property name="ElementShortName">pc[31:0]</obj_property>
+            <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rs" type="array">
+            <obj_property name="ElementShortName">rs[31:0]</obj_property>
+            <obj_property name="ObjectShortName">rs[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/sa" type="array">
+            <obj_property name="ElementShortName">sa[4:0]</obj_property>
+            <obj_property name="ObjectShortName">sa[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/ext5_sel" type="array">
+            <obj_property name="ElementShortName">ext5_sel[0:0]</obj_property>
+            <obj_property name="ObjectShortName">ext5_sel[0:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/ext5_mux_out" type="array">
+            <obj_property name="ElementShortName">ext5_mux_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">ext5_mux_out[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/imm" type="array">
+            <obj_property name="ElementShortName">imm[15:0]</obj_property>
+            <obj_property name="ObjectShortName">imm[15:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/ext16_out" type="array">
+            <obj_property name="ElementShortName">ext16_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">ext16_out[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/uext16_out" type="array">
+            <obj_property name="ElementShortName">uext16_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">uext16_out[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rt" type="array">
+            <obj_property name="ElementShortName">rt[31:0]</obj_property>
+            <obj_property name="ObjectShortName">rt[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/alu_a_sel" type="array">
+            <obj_property name="ElementShortName">alu_a_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_a_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/alu_b_sel" type="array">
+            <obj_property name="ElementShortName">alu_b_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_b_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/aluc" type="array">
+            <obj_property name="ElementShortName">aluc[3:0]</obj_property>
+            <obj_property name="ObjectShortName">aluc[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/alu_a_mux_out" type="array">
+            <obj_property name="ElementShortName">alu_a_mux_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_a_mux_out[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/alu_b_mux_out" type="array">
+            <obj_property name="ElementShortName">alu_b_mux_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_b_mux_out[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/alu_result" type="array">
+            <obj_property name="ElementShortName">alu_result[31:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_result[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group713" type="group">
+         <obj_property name="label">bypass</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/exe_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">exe_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">exe_rdc_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/bypass_exe" type="array">
+            <obj_property name="ElementShortName">bypass_exe[31:0]</obj_property>
+            <obj_property name="ObjectShortName">bypass_exe[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/bypass_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">bypass_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">bypass_rdc_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/exe_bypass_sel" type="array">
+            <obj_property name="ElementShortName">exe_bypass_sel[1:0]</obj_property>
+            <obj_property name="ObjectShortName">exe_bypass_sel[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/exe_bypass_mux_out" type="array">
+            <obj_property name="ElementShortName">exe_bypass_mux_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">exe_bypass_mux_out[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group684" type="group">
+         <obj_property name="label">multi</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/mul_prod_sign" type="array">
+            <obj_property name="ElementShortName">mul_prod_sign[63:0]</obj_property>
+            <obj_property name="ObjectShortName">mul_prod_sign[63:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/mul_prod_unsign" type="array">
+            <obj_property name="ElementShortName">mul_prod_unsign[63:0]</obj_property>
+            <obj_property name="ObjectShortName">mul_prod_unsign[63:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/mul_sign" type="logic">
+            <obj_property name="ElementShortName">mul_sign</obj_property>
+            <obj_property name="ObjectShortName">mul_sign</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/lo_mux_out" type="array">
+            <obj_property name="ElementShortName">lo_mux_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">lo_mux_out[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_exe/hi_mux_out" type="array">
+            <obj_property name="ElementShortName">hi_mux_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">hi_mux_out[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_exe/lo_we" type="logic">
+         <obj_property name="ElementShortName">lo_we</obj_property>
+         <obj_property name="ObjectShortName">lo_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_exe/hi_we" type="logic">
+         <obj_property name="ElementShortName">hi_we</obj_property>
+         <obj_property name="ObjectShortName">hi_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_exe/dmem_we" type="logic">
+         <obj_property name="ElementShortName">dmem_we</obj_property>
+         <obj_property name="ObjectShortName">dmem_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rf_we" type="logic">
+         <obj_property name="ElementShortName">rf_we</obj_property>
+         <obj_property name="ObjectShortName">rf_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rd_mux_sel" type="array">
+         <obj_property name="ElementShortName">rd_mux_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_mux_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_exe/rdc_exe" type="array">
+         <obj_property name="ElementShortName">rdc_exe[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdc_exe[4:0]</obj_property>
+         <obj_property name="Radix">OCTALRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group239" type="group">
+      <obj_property name="label">pipe_mem</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="group716" type="group">
+         <obj_property name="label">mem_pipe_signal</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/mem_valid" type="logic">
+            <obj_property name="ElementShortName">mem_valid</obj_property>
+            <obj_property name="ObjectShortName">mem_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/mem_allowin" type="logic">
+            <obj_property name="ElementShortName">mem_allowin</obj_property>
+            <obj_property name="ObjectShortName">mem_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/mem_ready_go" type="logic">
+            <obj_property name="ElementShortName">mem_ready_go</obj_property>
+            <obj_property name="ObjectShortName">mem_ready_go</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/mem_wb_validto" type="logic">
+            <obj_property name="ElementShortName">mem_wb_validto</obj_property>
+            <obj_property name="ObjectShortName">mem_wb_validto</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/wb_allowin" type="logic">
+            <obj_property name="ElementShortName">wb_allowin</obj_property>
+            <obj_property name="ObjectShortName">wb_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/exe_mem_validto" type="logic">
+            <obj_property name="ElementShortName">exe_mem_validto</obj_property>
+            <obj_property name="ObjectShortName">exe_mem_validto</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group715" type="group">
+         <obj_property name="label">pipe_mem_reg_in</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/bypass_rdc_valid_in" type="logic">
+            <obj_property name="ElementShortName">bypass_rdc_valid_in</obj_property>
+            <obj_property name="ObjectShortName">bypass_rdc_valid_in</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/dmem_we_in" type="logic">
+            <obj_property name="ElementShortName">dmem_we_in</obj_property>
+            <obj_property name="ObjectShortName">dmem_we_in</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/rf_we_in" type="logic">
+            <obj_property name="ElementShortName">rf_we_in</obj_property>
+            <obj_property name="ObjectShortName">rf_we_in</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/rt_in" type="array">
+            <obj_property name="ElementShortName">rt_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">rt_in[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/alu_result_in" type="array">
+            <obj_property name="ElementShortName">alu_result_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">alu_result_in[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/rdc_exe_in" type="array">
+            <obj_property name="ElementShortName">rdc_exe_in[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc_exe_in[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/rd_mux_sel_in" type="array">
+            <obj_property name="ElementShortName">rd_mux_sel_in[1:0]</obj_property>
+            <obj_property name="ObjectShortName">rd_mux_sel_in[1:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group714" type="group">
+         <obj_property name="label">bypass</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/rdc_mem" type="array">
+            <obj_property name="ElementShortName">rdc_mem[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc_mem[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/bypass_mem" type="array">
+            <obj_property name="ElementShortName">bypass_mem[31:0]</obj_property>
+            <obj_property name="ObjectShortName">bypass_mem[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/mem_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">mem_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">mem_rdc_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_mem/bypass_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">bypass_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">bypass_rdc_valid</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_mem/rd_mux_sel" type="array">
+         <obj_property name="ElementShortName">rd_mux_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_mux_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_mem/rt" type="array">
+         <obj_property name="ElementShortName">rt[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rt[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_mem/dmem_mapper_out" type="array">
+         <obj_property name="ElementShortName">dmem_mapper_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dmem_mapper_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_mem/alu_result" type="array">
+         <obj_property name="ElementShortName">alu_result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_mem/dmem_out" type="array">
+         <obj_property name="ElementShortName">dmem_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dmem_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_mem/wb_result" type="array">
+         <obj_property name="ElementShortName">wb_result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_result[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_mem/rf_we" type="logic">
+         <obj_property name="ElementShortName">rf_we</obj_property>
+         <obj_property name="ObjectShortName">rf_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_mem/dmem_we" type="logic">
+         <obj_property name="ElementShortName">dmem_we</obj_property>
+         <obj_property name="ObjectShortName">dmem_we</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group268" type="group">
+      <obj_property name="label">pipe_wb</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group719" type="group">
+         <obj_property name="label">wb_pipe_signal</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/wb_valid" type="logic">
+            <obj_property name="ElementShortName">wb_valid</obj_property>
+            <obj_property name="ObjectShortName">wb_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/wb_allowin" type="logic">
+            <obj_property name="ElementShortName">wb_allowin</obj_property>
+            <obj_property name="ObjectShortName">wb_allowin</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/wb_ready_go" type="logic">
+            <obj_property name="ElementShortName">wb_ready_go</obj_property>
+            <obj_property name="ObjectShortName">wb_ready_go</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/mem_wb_validto" type="logic">
+            <obj_property name="ElementShortName">mem_wb_validto</obj_property>
+            <obj_property name="ObjectShortName">mem_wb_validto</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group718" type="group">
+         <obj_property name="label">pipe_wb_reg_in</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/bypass_rdc_valid_in" type="logic">
+            <obj_property name="ElementShortName">bypass_rdc_valid_in</obj_property>
+            <obj_property name="ObjectShortName">bypass_rdc_valid_in</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/wb_result_in" type="array">
+            <obj_property name="ElementShortName">wb_result_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_result_in[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/rdc_mem_in" type="array">
+            <obj_property name="ElementShortName">rdc_mem_in[4:0]</obj_property>
+            <obj_property name="ObjectShortName">rdc_mem_in[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/rf_we_in" type="logic">
+            <obj_property name="ElementShortName">rf_we_in</obj_property>
+            <obj_property name="ObjectShortName">rf_we_in</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group717" type="group">
+         <obj_property name="label">bypass</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/bypass_wb" type="array">
+            <obj_property name="ElementShortName">bypass_wb[31:0]</obj_property>
+            <obj_property name="ObjectShortName">bypass_wb[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/wb_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">wb_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">wb_rdc_valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/pipeline_tb/uut/pipe_wb/bypass_rdc_valid" type="logic">
+            <obj_property name="ElementShortName">bypass_rdc_valid</obj_property>
+            <obj_property name="ObjectShortName">bypass_rdc_valid</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_wb/rdc_wb" type="array">
+         <obj_property name="ElementShortName">rdc_wb[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdc_wb[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_wb/wb_result" type="array">
+         <obj_property name="ElementShortName">wb_result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_result[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pipe_wb/rf_we" type="logic">
+         <obj_property name="ElementShortName">rf_we</obj_property>
+         <obj_property name="ObjectShortName">rf_we</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group285" type="group">
+      <obj_property name="label">top_connect</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/pipeline_tb/uut/id_allowin" type="logic">
+         <obj_property name="ElementShortName">id_allowin</obj_property>
+         <obj_property name="ObjectShortName">id_allowin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/exe_allowin" type="logic">
+         <obj_property name="ElementShortName">exe_allowin</obj_property>
+         <obj_property name="ObjectShortName">exe_allowin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/mem_allowin" type="logic">
+         <obj_property name="ElementShortName">mem_allowin</obj_property>
+         <obj_property name="ObjectShortName">mem_allowin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/wb_allowin" type="logic">
+         <obj_property name="ElementShortName">wb_allowin</obj_property>
+         <obj_property name="ObjectShortName">wb_allowin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/if_id_validto" type="logic">
+         <obj_property name="ElementShortName">if_id_validto</obj_property>
+         <obj_property name="ObjectShortName">if_id_validto</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/id_exe_validto" type="logic">
+         <obj_property name="ElementShortName">id_exe_validto</obj_property>
+         <obj_property name="ObjectShortName">id_exe_validto</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/exe_mem_validto" type="logic">
+         <obj_property name="ElementShortName">exe_mem_validto</obj_property>
+         <obj_property name="ObjectShortName">exe_mem_validto</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/mem_wb_validto" type="logic">
+         <obj_property name="ElementShortName">mem_wb_validto</obj_property>
+         <obj_property name="ObjectShortName">mem_wb_validto</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/bypass_exe" type="array">
+         <obj_property name="ElementShortName">bypass_exe[31:0]</obj_property>
+         <obj_property name="ObjectShortName">bypass_exe[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/bypass_mem" type="array">
+         <obj_property name="ElementShortName">bypass_mem[31:0]</obj_property>
+         <obj_property name="ObjectShortName">bypass_mem[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/bypass_wb" type="array">
+         <obj_property name="ElementShortName">bypass_wb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">bypass_wb[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/exe_rdc_valid" type="logic">
+         <obj_property name="ElementShortName">exe_rdc_valid</obj_property>
+         <obj_property name="ObjectShortName">exe_rdc_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/mem_rdc_valid" type="logic">
+         <obj_property name="ElementShortName">mem_rdc_valid</obj_property>
+         <obj_property name="ObjectShortName">mem_rdc_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/wb_rdc_valid" type="logic">
+         <obj_property name="ElementShortName">wb_rdc_valid</obj_property>
+         <obj_property name="ObjectShortName">wb_rdc_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/bypass_rdc_valid_id" type="logic">
+         <obj_property name="ElementShortName">bypass_rdc_valid_id</obj_property>
+         <obj_property name="ObjectShortName">bypass_rdc_valid_id</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/bypass_rdc_valid_exe" type="logic">
+         <obj_property name="ElementShortName">bypass_rdc_valid_exe</obj_property>
+         <obj_property name="ObjectShortName">bypass_rdc_valid_exe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/bypass_rdc_valid_mem" type="logic">
+         <obj_property name="ElementShortName">bypass_rdc_valid_mem</obj_property>
+         <obj_property name="ObjectShortName">bypass_rdc_valid_mem</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pc_if" type="array">
+         <obj_property name="ElementShortName">pc_if[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_if[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/pc_id" type="array">
+         <obj_property name="ElementShortName">pc_id[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_id[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/instr" type="array">
+         <obj_property name="ElementShortName">instr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/sa" type="array">
+         <obj_property name="ElementShortName">sa[4:0]</obj_property>
+         <obj_property name="ObjectShortName">sa[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/j_imm" type="array">
+         <obj_property name="ElementShortName">j_imm[25:0]</obj_property>
+         <obj_property name="ObjectShortName">j_imm[25:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/imm" type="array">
+         <obj_property name="ElementShortName">imm[15:0]</obj_property>
+         <obj_property name="ObjectShortName">imm[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rs_id" type="array">
+         <obj_property name="ElementShortName">rs_id[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs_id[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rt_id" type="array">
+         <obj_property name="ElementShortName">rt_id[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_id[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rt_exe" type="array">
+         <obj_property name="ElementShortName">rt_exe[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_exe[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rdc_id" type="array">
+         <obj_property name="ElementShortName">rdc_id[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdc_id[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rdc_exe" type="array">
+         <obj_property name="ElementShortName">rdc_exe[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdc_exe[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rdc_mem" type="array">
+         <obj_property name="ElementShortName">rdc_mem[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdc_mem[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rdc_wb" type="array">
+         <obj_property name="ElementShortName">rdc_wb[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rdc_wb[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/aluc" type="array">
+         <obj_property name="ElementShortName">aluc[3:0]</obj_property>
+         <obj_property name="ObjectShortName">aluc[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/npc_mux_sel" type="array">
+         <obj_property name="ElementShortName">npc_mux_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">npc_mux_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/ext5_mux_sel" type="array">
+         <obj_property name="ElementShortName">ext5_mux_sel[0:0]</obj_property>
+         <obj_property name="ObjectShortName">ext5_mux_sel[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/alu_a_mux_sel" type="array">
+         <obj_property name="ElementShortName">alu_a_mux_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_a_mux_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/alu_b_mux_sel" type="array">
+         <obj_property name="ElementShortName">alu_b_mux_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_b_mux_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rd_mux_sel_id" type="array">
+         <obj_property name="ElementShortName">rd_mux_sel_id[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_mux_sel_id[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rd_mux_sel_exe" type="array">
+         <obj_property name="ElementShortName">rd_mux_sel_exe[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_mux_sel_exe[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/lo_mux_sel" type="array">
+         <obj_property name="ElementShortName">lo_mux_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">lo_mux_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/hi_mux_sel" type="array">
+         <obj_property name="ElementShortName">hi_mux_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">hi_mux_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/mul_sign" type="array">
+         <obj_property name="ElementShortName">mul_sign[0:0]</obj_property>
+         <obj_property name="ObjectShortName">mul_sign[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/exe_bypass_sel" type="array">
+         <obj_property name="ElementShortName">exe_bypass_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_bypass_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/alu_result" type="array">
+         <obj_property name="ElementShortName">alu_result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/wb_result_mem" type="array">
+         <obj_property name="ElementShortName">wb_result_mem[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_result_mem[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/wb_result_wb" type="array">
+         <obj_property name="ElementShortName">wb_result_wb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_result_wb[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/dmem_we_id" type="logic">
+         <obj_property name="ElementShortName">dmem_we_id</obj_property>
+         <obj_property name="ObjectShortName">dmem_we_id</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/dmem_we_exe" type="logic">
+         <obj_property name="ElementShortName">dmem_we_exe</obj_property>
+         <obj_property name="ObjectShortName">dmem_we_exe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rf_we_id" type="logic">
+         <obj_property name="ElementShortName">rf_we_id</obj_property>
+         <obj_property name="ObjectShortName">rf_we_id</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rf_we_exe" type="logic">
+         <obj_property name="ElementShortName">rf_we_exe</obj_property>
+         <obj_property name="ObjectShortName">rf_we_exe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rf_we_mem" type="logic">
+         <obj_property name="ElementShortName">rf_we_mem</obj_property>
+         <obj_property name="ObjectShortName">rf_we_mem</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/rf_we_wb" type="logic">
+         <obj_property name="ElementShortName">rf_we_wb</obj_property>
+         <obj_property name="ObjectShortName">rf_we_wb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/lo_we" type="logic">
+         <obj_property name="ElementShortName">lo_we</obj_property>
+         <obj_property name="ObjectShortName">lo_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/hi_we" type="logic">
+         <obj_property name="ElementShortName">hi_we</obj_property>
+         <obj_property name="ObjectShortName">hi_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/lw_instr" type="logic">
+         <obj_property name="ElementShortName">lw_instr</obj_property>
+         <obj_property name="ObjectShortName">lw_instr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/exe_lw_instr" type="logic">
+         <obj_property name="ElementShortName">exe_lw_instr</obj_property>
+         <obj_property name="ObjectShortName">exe_lw_instr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/hi" type="array">
+         <obj_property name="ElementShortName">hi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">hi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/pipeline_tb/uut/lo" type="array">
+         <obj_property name="ElementShortName">lo[31:0]</obj_property>
+         <obj_property name="ObjectShortName">lo[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

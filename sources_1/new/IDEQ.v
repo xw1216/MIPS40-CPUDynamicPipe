@@ -1,0 +1,19 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// 
+// Create Date: 2021/11/03 11:32:59
+// Design Name: 
+// Module Name: IDEQ
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module idEq
+(
+    input  wire [31:0] dina,
+    input  wire [31:0] dinb,
+    output wire eq
+);
+
+assign eq = (dina == dinb) ? 1:0;
+endmodule

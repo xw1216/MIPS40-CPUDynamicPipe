@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="alu_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alu_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="68.251 ns"></ZoomEndTime>
+      <Cursor1Time time="45.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="166"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="29" />
+   <wvobject fp_name="group59" type="group">
+      <obj_property name="label">uut inout</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/alu_tb/uut/src1" type="array">
+         <obj_property name="ElementShortName">src1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">src1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/src2" type="array">
+         <obj_property name="ElementShortName">src2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">src2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/aluc" type="array">
+         <obj_property name="ElementShortName">aluc[3:0]</obj_property>
+         <obj_property name="ObjectShortName">aluc[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/result" type="array">
+         <obj_property name="ElementShortName">result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">result[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/zr" type="array">
+      <obj_property name="ElementShortName">zr[0:0]</obj_property>
+      <obj_property name="ObjectShortName">zr[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/cy" type="array">
+      <obj_property name="ElementShortName">cy[0:0]</obj_property>
+      <obj_property name="ObjectShortName">cy[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/ng" type="array">
+      <obj_property name="ElementShortName">ng[0:0]</obj_property>
+      <obj_property name="ObjectShortName">ng[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/of" type="array">
+      <obj_property name="ElementShortName">of[0:0]</obj_property>
+      <obj_property name="ObjectShortName">of[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group58" type="group">
+      <obj_property name="label">op</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/alu_tb/uut/op_addu" type="logic">
+         <obj_property name="ElementShortName">op_addu</obj_property>
+         <obj_property name="ObjectShortName">op_addu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_add" type="logic">
+         <obj_property name="ElementShortName">op_add</obj_property>
+         <obj_property name="ObjectShortName">op_add</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_subu" type="logic">
+         <obj_property name="ElementShortName">op_subu</obj_property>
+         <obj_property name="ObjectShortName">op_subu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_sub" type="logic">
+         <obj_property name="ElementShortName">op_sub</obj_property>
+         <obj_property name="ObjectShortName">op_sub</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_and" type="logic">
+         <obj_property name="ElementShortName">op_and</obj_property>
+         <obj_property name="ObjectShortName">op_and</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_or" type="logic">
+         <obj_property name="ElementShortName">op_or</obj_property>
+         <obj_property name="ObjectShortName">op_or</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_xor" type="logic">
+         <obj_property name="ElementShortName">op_xor</obj_property>
+         <obj_property name="ObjectShortName">op_xor</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_nor" type="logic">
+         <obj_property name="ElementShortName">op_nor</obj_property>
+         <obj_property name="ObjectShortName">op_nor</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_lui" type="logic">
+         <obj_property name="ElementShortName">op_lui</obj_property>
+         <obj_property name="ObjectShortName">op_lui</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_slt" type="logic">
+         <obj_property name="ElementShortName">op_slt</obj_property>
+         <obj_property name="ObjectShortName">op_slt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_sltu" type="logic">
+         <obj_property name="ElementShortName">op_sltu</obj_property>
+         <obj_property name="ObjectShortName">op_sltu</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_sra" type="logic">
+         <obj_property name="ElementShortName">op_sra</obj_property>
+         <obj_property name="ObjectShortName">op_sra</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_sll" type="logic">
+         <obj_property name="ElementShortName">op_sll</obj_property>
+         <obj_property name="ObjectShortName">op_sll</obj_property>
+      </wvobject>
+      <wvobject fp_name="/alu_tb/uut/op_srl" type="logic">
+         <obj_property name="ElementShortName">op_srl</obj_property>
+         <obj_property name="ObjectShortName">op_srl</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/adder_out" type="logic">
+      <obj_property name="ElementShortName">adder_out</obj_property>
+      <obj_property name="ObjectShortName">adder_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/adder_of" type="array">
+      <obj_property name="ElementShortName">adder_of[1:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_of[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/add_sub_result" type="array">
+      <obj_property name="ElementShortName">add_sub_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">add_sub_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/and_result" type="array">
+      <obj_property name="ElementShortName">and_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">and_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/or_result" type="array">
+      <obj_property name="ElementShortName">or_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">or_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/xor_result" type="array">
+      <obj_property name="ElementShortName">xor_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xor_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/nor_result" type="array">
+      <obj_property name="ElementShortName">nor_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">nor_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/lui_result" type="array">
+      <obj_property name="ElementShortName">lui_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">lui_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/slt_result" type="array">
+      <obj_property name="ElementShortName">slt_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">slt_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/sltu_result" type="array">
+      <obj_property name="ElementShortName">sltu_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sltu_result[31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/sll_result" type="array">
+      <obj_property name="ElementShortName">sll_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sll_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/srl_result" type="array">
+      <obj_property name="ElementShortName">srl_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">srl_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/sra_result" type="array">
+      <obj_property name="ElementShortName">sra_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sra_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/adder_a" type="array">
+      <obj_property name="ElementShortName">adder_a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/adder_b" type="array">
+      <obj_property name="ElementShortName">adder_b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_b[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/adder_result" type="array">
+      <obj_property name="ElementShortName">adder_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/cy_ena" type="logic">
+      <obj_property name="ElementShortName">cy_ena</obj_property>
+      <obj_property name="ObjectShortName">cy_ena</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/of_ena" type="logic">
+      <obj_property name="ElementShortName">of_ena</obj_property>
+      <obj_property name="ObjectShortName">of_ena</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/cy_reg" type="array">
+      <obj_property name="ElementShortName">cy_reg[0:0]</obj_property>
+      <obj_property name="ObjectShortName">cy_reg[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/of_reg" type="array">
+      <obj_property name="ElementShortName">of_reg[0:0]</obj_property>
+      <obj_property name="ObjectShortName">of_reg[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/sll_result_last" type="array">
+      <obj_property name="ElementShortName">sll_result_last[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sll_result_last[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/srl_result_last" type="array">
+      <obj_property name="ElementShortName">srl_result_last[31:0]</obj_property>
+      <obj_property name="ObjectShortName">srl_result_last[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alu_tb/uut/sra_result_last" type="array">
+      <obj_property name="ElementShortName">sra_result_last[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sra_result_last[31:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,20 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// 
+// Create Date: 2021/11/04 12:15:39
+// Design Name: 
+// Module Name: ADDER
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module adder
+(
+    input  wire [31:0] dina,
+    input  wire [31:0] dinb,
+    output wire [31:0] dout
+);
+
+assign dout = dina + dinb;
+
+endmodule
