@@ -14,11 +14,11 @@ module pipeline
     input wire rst,
     // external two interrupt signals
     input wire [1:0] interrupt,
-    input wire [4:0] arguments,
+    input wire [5:0] arguments,
     
     output wire [31:0] pc_out,
-    output wire [31:0] instr_out
-//    output wire [15:0] o_test_result,
+    output wire [31:0] instr_out,
+    output wire [35:0] o_test_result
 //    output wire [ 7:0] o_seg,
 //    output wire [ 7:0] o_sel
 );
@@ -108,12 +108,12 @@ wire lw_instr, exe_lw_instr;
 // TODO: add mfc0 pipeline block
 wire mfc0_instr, exe_mfc0_instr, mem_mfc0_instr;
 wire jump_instr, exe_jump_instr;
-wire [31:0] test_result;
+wire [35:0] test_result;
 wire [31:0] pc_out;
 wire [31:0] hi, lo;
 
 assign pc_out = pc_id;
-//assign o_test_result = test_result[15:0];
+assign o_test_result = test_result[35:0];
 assign flush_if_id = flush;
 assign flush_id_exe = flush;
 assign flush_exe_mem = flush;

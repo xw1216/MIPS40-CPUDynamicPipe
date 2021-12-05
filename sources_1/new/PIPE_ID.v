@@ -39,7 +39,7 @@ module pipe_id
     input wire mem_mfc0_instr,
     input wire exe_jump_instr,
     // external argument in
-    input wire [4:0] arguments,
+    input wire [5:0] arguments,
     // cp0 exception status
     input wire ex_wb,
     input wire cp0_flush,
@@ -87,7 +87,7 @@ module pipe_id
     output wire mfc0_instr,
     output wire jump_instr,
     // throw eggs test result in $1 register 
-    output wire [31:0] test_result,
+    output wire [35:0] test_result,
     // cp0 exception action output 
     output wire ex,
     output wire cp0_we,

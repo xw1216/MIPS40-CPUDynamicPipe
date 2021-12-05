@@ -10,24 +10,25 @@
 
 module pipeline_tb();
 
-//wire [31:0] pc, instr;
+wire [31:0] pc, instr;
 reg clk, rst;
-reg [15:0] arguments;
-wire [15:0] o_test_result;
-wire [ 7:0] o_seg;
-wire [ 7:0] o_sel;
+reg [1:0] interrupt;
+reg [5:0] arguments;
+wire [35:0] o_test_result;
+//wire [ 7:0] o_seg;
+//wire [ 7:0] o_sel;
 
 pipeline uut
 (
     .clk_gl(clk),
     .rst(rst),
-    
-//    .pc_out(pc),
-//    .instr_out(instr),
+    // external two interrupt signals
+    .interrupt(interrupt),
     .arguments(arguments),
-    .o_test_result(o_test_result),
-    .o_seg(o_seg),
-    .o_sel(o_sel)
+
+    .pc_out(pc),
+    .instr_out(instr),
+    .o_test_result(o_test_result)
 );
 
 initial begin
@@ -39,8 +40,7 @@ initial begin
 end
 
 initial begin
-    arguments[15:8] <= 8'd3;
-    arguments[ 7:0] <= 8'd25;
+    arguments <= 6'd60;
     #2
     rst <= 1'b1;
     # 100000
