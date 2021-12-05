@@ -9,23 +9,34 @@
 
 module clk_div_manual
 (
-    input wire reset,
+    input wire rst,
     input wire clkin,
     output reg clk,
     output reg mem_clk
 );
 
+reg [ 4:0] rst_counter; 
 reg [23:0] counter;
 
-always @ (posedge reset or posedge clkin) begin
-    if(reset) begin
-        clk <= 1'b0;
-        mem_clk <= 1'b1;
+always @ (posedge rst or posedge clkin) begin
+    if(rst) begin
+//        clk <= 1'b0;
+//        mem_clk <= 1'b1;
         counter <= 24'd0;
+        rst_counter <= rst_counter + 1;
+        if(rst_counter == 5'd2) begin
+            clk <= 1'b1;
+            mem_clk <= 1'b0;
+        end
+        else begin
+            clk <= 1'b0;
+            mem_clk <= 1'b1;
+        end
     end
     else begin
-        // map 100MHz to 10000Hz
-        if(counter >= 24'd10000) begin
+        rst_counter <= 5'd0;
+        // map 50MHz to 100Hz 24'd500000
+        if(counter >= 24'd500000) begin
             clk <= ~clk;
             mem_clk <= ~mem_clk;
             counter <= 24'd0;

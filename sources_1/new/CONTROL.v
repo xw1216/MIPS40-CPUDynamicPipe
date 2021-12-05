@@ -10,7 +10,7 @@
 
 module cu(
     // input
-    
+    input wire id_valid,
     // operation judgement dependency
     input wire [5:0] op,
     input wire [5:0] func,
@@ -43,6 +43,7 @@ module cu(
     input wire cp0_exl,
     input wire [7:0] cp0_int_mask,
     input wire [7:0] cp0_int_sig,
+    input wire [4:0] cp0_rdc_in,
     
     // output
     
@@ -144,7 +145,7 @@ assign op_mflo      = (op == 6'b000000) && (func == 6'b010010);
 assign op_mthi      = (op == 6'b000000) && (func == 6'b010001);
 assign op_mtlo      = (op == 6'b000000) && (func == 6'b010011);
 assign op_mfc0      = (op == 6'b010000) && (id_rsc == 5'b00000);
-assign op_mfc0      = (op == 6'b010000) && (id_rst == 5'b00000);
+assign op_mtc0      = (op == 6'b010000) && (id_rsc == 5'b00100);
 assign op_eret      = (op == 6'b010000) && (func == 6'b011000);
 
 
@@ -153,14 +154,13 @@ assign instr_no_write = op_sw   | op_beq    | op_bne    | op_j      |
                         op_mtlo | op_mtc0;
 assign instr_rs_visit = op_jr   | op_addiu  | op_addi   | op_sltiu  | 
                         op_slti | op_andi   | op_ori    | op_xori   |
-                        op_sll  | op_srl    | op_sra    | op_mthi   |
-                        op_mtlo;
+                        op_mthi | op_mtlo;
 assign instr_both_visit = op_addu   | op_add    | op_subu   | op_sub    |
                           op_sltu   | op_slt    | op_and    | op_or     |
                           op_xor    | op_nor    | op_sllv   | op_srlv   |
                           op_srav   | op_sw     | op_beq    | op_bne    |
                           op_mult   | op_multu;
-assign instr_rt_visit = op_mtc0;
+assign instr_rt_visit =   op_mtc0   | op_sll    | op_srl    | op_sra;
 
 // interrupt management
 parameter EX_CODE_INT = 5'h00;
@@ -168,23 +168,29 @@ parameter EX_CODE_HLT = 5'h01;
 parameter EX_CODE_RESUME = 5'h02;
 
 wire has_int;
+wire int_hlt;
 wire int_resume;
 assign has_int = ((cp0_int_sig[7:0] & cp0_int_mask[7:0]) != 8'h00) &&
-                 cp0_ie == 1'b1 && cp0_exl == 1'b1;
-            // don't response resume interrupt except in halt status
-            // hlt will enforce the cpu to kernal mode and in infinite loop
-            // and it won't be treated in times
-assign int_resume = cp0_int_sig[7] & cp0_int_mask[7];
-assign ex = ((has_int & !int_resume) & !cp0_exl) 
-            || (cp0_hlt & (int_resume));
+                 cp0_ie == 1'b1 /*&& cp0_exl == 1'b0*/ ;
+// don't response resume interrupt except in halt status
+// hlt will enforce the cpu to kernal mode and in infinite loop
+// and it won't be treated in times
+assign int_hlt = cp0_int_sig[7] & cp0_int_mask[7] & cp0_ie;
+assign int_resume = cp0_int_sig[6] & cp0_int_mask[6] & cp0_ie;
+
+//assign ex = ((has_int & !int_resume) & !cp0_exl) 
+//            || (cp0_hlt & (int_resume));
+assign ex = (int_hlt & !cp0_hlt & !cp0_exl) ||
+            (int_resume & cp0_hlt & cp0_exl);
             
 assign ex_code = (!ex) ? EX_CODE_INT :
-                 (cp0_int_sig[7] & cp0_int_mask[7]) ? EX_CODE_HLT :
-                 (cp0_int_sig[6] & cp0_int_mask[6]) ? EX_CODE_RESUME :
+                 (int_hlt) ? EX_CODE_HLT :
+                 (int_resume) ? EX_CODE_RESUME :
                  EX_CODE_INT;
+
 assign cp0_we = op_mtc0;
 assign cp0_rd_mux_sel = (op_mfc0) ? 1'b1 : 1'b0;
-assign cp0_rdc = id_rdc;
+assign cp0_rdc = cp0_rdc_in;
 assign eret_flush = op_eret;
 assign branch_delay = exe_jump_instr;
 
@@ -210,7 +216,8 @@ assign aluc = ({4{ op_addu | op_addiu }} & 4'b0000)
 //assign npc_mux_sel[1] = op_jr   | op_j                  | op_jal;
 //assign npc_mux_sel[0] = op_jr   | (op_beq & eq_flag)    | (op_bne & !eq_flag);
 
-assign npc_mux_sel = (ex_wb | cp0_hlt | cp0_eret) ? 3'b100 :
+assign npc_mux_sel = (!id_valid) ? 3'b000 : 
+                     (ex_wb | cp0_hlt | cp0_eret) ? 3'b100 :
                      (op_jr) ? 3'b011 :
                      (op_j | op_jal) ? 3'b010 :
                      ( (op_beq & eq_flag) | (op_bne & !eq_flag) ) ? 3'b001:
@@ -236,7 +243,7 @@ assign rt_mux_sel = ((instr_both_visit || instr_rt_visit) && exe_rdc_valid && id
                     
 assign rdc_mux_sel = (op_jal) ? 2'b10 : 
                      (op_addiu | op_addi | op_sltiu | op_slti | op_andi | op_ori |
-                      op_xori  | op_lui  | op_lw    | op_sw   | op_beq  | op_bne) ? 
+                      op_xori  | op_lui  | op_lw    | op_sw   | op_beq  | op_bne | op_mfc0) ? 
                       2'b01 :
                       2'b00;
 assign ext5_mux_sel = ~(op_sllv | op_srlv | op_srav);

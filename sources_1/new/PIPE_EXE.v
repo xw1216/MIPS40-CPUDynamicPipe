@@ -171,7 +171,7 @@ exe_pipe_reg exe_pipe_reg
     .jump_instr_in(jump_instr_in),
     .lo_we_in(lo_we_in),
     .hi_we_in(hi_we_in),
-    .mfc0_instr_in,
+    .mfc0_instr_in(mfc0_instr_in),
     // exception trans
     .ex_in(ex_in),
     .ex_code_in(ex_code_in),

@@ -26,7 +26,6 @@ module wb_pipe_reg
     input wire branch_delay_wb_in,
     
     input wire [ 4:0] cp0_rdc_in,
-    input wire [ 5:0] int_sig_in,
     input wire [31:0] cp0_data_in,
     input wire [31:0] pc_in,
     input wire [ 4:0] ex_code_in,
@@ -43,7 +42,6 @@ module wb_pipe_reg
     output reg branch_delay_wb,
     
     output reg [ 4:0] cp0_rdc,
-    output reg [ 5:0] int_sig,
     output reg [31:0] cp0_data,
     output reg [31:0] pc,
     output reg [ 4:0] ex_code
@@ -62,7 +60,6 @@ always @ (posedge clk) begin
         eret_flush <= eret_flush_in;
         branch_delay_wb <= branch_delay_wb_in;
         cp0_rdc <= cp0_rdc_in;
-        int_sig <= int_sig_in;
         cp0_data <= cp0_data_in;
         pc <= pc_in;
         ex_code <= ex_code_in;

@@ -68,7 +68,6 @@ wire eret_flush;
 wire branch_delay_wb;
 
 wire [ 4:0] cp0_rdc;
-wire [ 5:0] int_sig;
 wire [31:0] cp0_data;
 wire [31:0] pc;
 wire [ 4:0] ex_code;
@@ -109,7 +108,6 @@ wb_pipe_reg wb_pipe_reg
     .branch_delay_wb_in(branch_delay_wb_in),
     
     .cp0_rdc_in(cp0_rdc_in),
-    .int_sig_in(int_sig_in),
     .cp0_data_in(cp0_data_in),
     .pc_in(pc_in),
     .ex_code_in(ex_code_in),
@@ -126,7 +124,6 @@ wb_pipe_reg wb_pipe_reg
     .branch_delay_wb(branch_delay_wb),
     
     .cp0_rdc(cp0_rdc),
-    .int_sig(int_sig),
     .cp0_data(cp0_data),
     .pc(pc),
     .ex_code(ex_code)
@@ -153,13 +150,13 @@ cp0 cp0
     .clk(clk),
     .mem_clk(mem_clk),
     
-    .cp0_we(cp0_we && wb_valid),
+    .cp0_we_in(cp0_we && wb_valid),
     .ex_wb_in(ex_wb && wb_valid),
     .eret_flush_in(eret_flush && wb_valid),
-    .branch_delay_wb(branch_delay),
+    .branch_delay_wb_in(branch_delay_wb),
     
     .cp0_rdc_in(cp0_rdc),
-    .int_sig_in(int_sig),
+    .int_sig_in(int_sig_in),
     .cp0_data_in(cp0_data),
     .epc_in(pc),
     .ex_code_in(ex_code),

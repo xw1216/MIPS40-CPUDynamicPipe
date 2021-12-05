@@ -16,29 +16,29 @@ module pipeline
     input wire [1:0] interrupt,
     input wire [5:0] arguments,
     
-    output wire [31:0] pc_out,
-    output wire [31:0] instr_out,
-    output wire [35:0] o_test_result
-//    output wire [ 7:0] o_seg,
-//    output wire [ 7:0] o_sel
+//    output wire [31:0] pc_out,
+//    output wire [31:0] instr_out,
+    output wire [3:0] o_test_result,
+    output wire [ 7:0] o_seg,
+    output wire [ 7:0] o_sel
 );
 
 wire clk;
 wire mem_clk;
 
-clk_div clk_div(
-    .reset(rst),
-    .clkin(clk_gl),
-    .clk(clk),
-    .mem_clk(mem_clk)
-);
-
-//clk_div_manual clk_div_manual(
+//clk_div clk_div(
 //    .reset(rst),
 //    .clkin(clk_gl),
 //    .clk(clk),
 //    .mem_clk(mem_clk)
 //);
+
+clk_div_manual clk_div_manual(
+    .rst(rst),
+    .clkin(clk_gl),
+    .clk(clk),
+    .mem_clk(mem_clk)
+);
 
 wire id_allowin, exe_allowin, 
      mem_allowin, wb_allowin;
@@ -113,7 +113,7 @@ wire [31:0] pc_out;
 wire [31:0] hi, lo;
 
 assign pc_out = pc_id;
-assign o_test_result = test_result[35:0];
+assign o_test_result = test_result[35:32];
 assign flush_if_id = flush;
 assign flush_id_exe = flush;
 assign flush_exe_mem = flush;
@@ -196,7 +196,7 @@ pipe_id pipe_id
     .id_exe_validto(id_exe_validto),
     // pipe backward data
     .pc_out(pc_id),
-    .instr_out(instr_out),
+    .instr_out(/*instr_out*/),
     .sa(sa),
     .j_imm(j_imm),
     .imm(imm),
@@ -249,7 +249,10 @@ pipe_exe pipe_exe
     .mem_clk(mem_clk),
     .mem_allowin(mem_allowin),
     .id_exe_validto(id_exe_validto),
+    .ex_mem(ex_mem),
+    .ex_wb(ex_wb),
     .bypass_rdc_valid_in(bypass_rdc_valid_id),
+    
     .flush_exe_mem(flush_exe_mem),
     // id pipe data input
     .pc_in(pc_id),
@@ -410,7 +413,7 @@ pipe_wb pipe_wb
     .branch_delay_wb_in(branch_delay_mem),
     
     .cp0_rdc_in(cp0_rdc_mem),
-    .int_sig_in({interrupt, 3'b0}),
+    .int_sig_in({interrupt, 4'b0}),
     .cp0_data_in(rt_mem),
     .pc_in(pc_mem),
     .ex_code_in(ex_code_mem),
@@ -443,14 +446,14 @@ pipe_wb pipe_wb
 );
 
 
-//seg7display seg7display
-//(
-//    .clk(clk),
-//    .reset(rst),
-//    .cs(1'b1),
-//    .i_data(pc_out),
-//    .o_seg(o_seg),
-//    .o_sel(o_sel)
-//);
+seg7display seg7display
+(
+    .clk(clk_gl),
+    .reset(rst),
+    .cs(1'b1),
+    .i_data(test_result[31:0]),
+    .o_seg(o_seg),
+    .o_sel(o_sel)
+);
 
 endmodule

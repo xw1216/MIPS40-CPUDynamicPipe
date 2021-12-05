@@ -192,6 +192,8 @@ mux4 #(5) rdc_mux (
     .out(rdc_mux_out)
 );
 
+
+
 idEq id_eq
 (
     .dina(rs_mux_out),
@@ -201,7 +203,7 @@ idEq id_eq
 
 cu cu(
     // input
-
+    .id_valid(id_valid),
     // operation judgement dependency
     .op(op),
     .func(imm[5:0]),
@@ -231,6 +233,7 @@ cu cu(
     .cp0_exl(cp0_exl),
     .cp0_int_mask(cp0_int_mask),
     .cp0_int_sig(cp0_int_sig),
+    .cp0_rdc_in(rdc),
     
     // output
     

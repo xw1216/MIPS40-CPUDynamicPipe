@@ -31,7 +31,7 @@ always @(posedge clk or posedge rst) begin
     if(rst) begin
         // pre-loaded matrix rows and cols from external switches
         reg_array[0] <= 32'b0;
-        reg_array[1] <= { 27'd0, arguments[5:0] };
+        reg_array[24] <= { 27'd0, arguments[5:0] };
     end
     else if(we) begin
         if(~(waddr == 5'd0)) begin

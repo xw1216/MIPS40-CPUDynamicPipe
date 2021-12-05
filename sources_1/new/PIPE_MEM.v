@@ -117,7 +117,7 @@ mem_pipe_reg mem_pipe_reg
     .lo_in(lo_in),
     .hi_in(hi_in),
     
-    .mfc0_instr_in,
+    .mfc0_instr_in(mfc0_instr_in),
     // exception trans
     .ex_in(ex_in),
     .ex_code_in(ex_code_in),
