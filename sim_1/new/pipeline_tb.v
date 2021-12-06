@@ -56,22 +56,22 @@ initial begin
     #250 
     rst <= 1'b0;
     
-    #3000
-    interrupt <= 2'b10;
-    #1000
-    interrupt <= 2'b00;
-    #1000
-    interrupt <= 2'b01;
-    #1000
-    interrupt <= 2'b00;
-    #1000
-    interrupt <= 2'b01;
-    #1000
-    interrupt <= 2'b10;
-    #1000
-    interrupt <= 2'b01;
-    #1000
-    interrupt <= 2'b00;
+//    #3000
+//    interrupt <= 2'b10;
+//    #1000
+//    interrupt <= 2'b00;
+//    #1000
+//    interrupt <= 2'b01;
+//    #1000
+//    interrupt <= 2'b00;
+//    #1000
+//    interrupt <= 2'b01;
+//    #1000
+//    interrupt <= 2'b10;
+//    #1000
+//    interrupt <= 2'b01;
+//    #1000
+//    interrupt <= 2'b00;
     
     
 end

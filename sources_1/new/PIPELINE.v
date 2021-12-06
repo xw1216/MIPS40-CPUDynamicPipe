@@ -16,8 +16,8 @@ module pipeline
     input wire [1:0] interrupt,
     input wire [5:0] arguments,
     
-//    output wire [31:0] pc_out,
-//    output wire [31:0] instr_out,
+    output wire [31:0] pc_out,
+    output wire [31:0] instr_out,
     output wire [3:0] o_test_result,
     output wire [ 7:0] o_seg,
     output wire [ 7:0] o_sel
@@ -26,19 +26,19 @@ module pipeline
 wire clk;
 wire mem_clk;
 
-//clk_div clk_div(
-//    .reset(rst),
-//    .clkin(clk_gl),
-//    .clk(clk),
-//    .mem_clk(mem_clk)
-//);
-
-clk_div_manual clk_div_manual(
-    .rst(rst),
+clk_div clk_div(
+    .reset(rst),
     .clkin(clk_gl),
     .clk(clk),
     .mem_clk(mem_clk)
 );
+
+//clk_div_manual clk_div_manual(
+//    .rst(rst),
+//    .clkin(clk_gl),
+//    .clk(clk),
+//    .mem_clk(mem_clk)
+//);
 
 wire id_allowin, exe_allowin, 
      mem_allowin, wb_allowin;
@@ -109,7 +109,7 @@ wire lw_instr, exe_lw_instr;
 wire mfc0_instr, exe_mfc0_instr, mem_mfc0_instr;
 wire jump_instr, exe_jump_instr;
 wire [35:0] test_result;
-wire [31:0] pc_out;
+//wire [31:0] pc_out;
 wire [31:0] hi, lo;
 
 assign pc_out = pc_id;
@@ -196,7 +196,7 @@ pipe_id pipe_id
     .id_exe_validto(id_exe_validto),
     // pipe backward data
     .pc_out(pc_id),
-    .instr_out(/*instr_out*/),
+    .instr_out(instr_out),
     .sa(sa),
     .j_imm(j_imm),
     .imm(imm),
